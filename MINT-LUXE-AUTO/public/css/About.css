@@ -1,0 +1,50 @@
+* {
+    font-family: "Poppins";
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #050B20;
+}
+.aboutus{
+    width: 100%;
+    background-color: white;
+    margin-top: 100px;border-radius: 50px;
+}
+.aboutus h1{
+    padding-left: 50px;
+    padding-top:40px;
+}
+.tabout{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-right: 50px;
+}
+.tabout span{
+    width: 700px;
+}
+.tabout h1{
+    padding-top:0px;
+}
+.timg{
+    margin-top: 200px;
+    width: fit-content;
+    padding-left: 60px;
+}
+td[rowspan="2"] img{
+    width: auto;
+    height: 700px;
+}
+.timg img{
+    width: 340px;
+    height: auto;
+    border-radius: 10px;
+}
+.whyus{
+    margin-top: 150px;
+}
+.brand{
+    margin-top: 150px;
+    padding-bottom: 150px;
+}

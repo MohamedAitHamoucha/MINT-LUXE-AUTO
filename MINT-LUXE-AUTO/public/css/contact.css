@@ -1,0 +1,74 @@
+* {
+    font-family: "Poppins";
+}
+*:focus {
+    outline: none;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #050B20;
+}
+.contactus{
+    width: 100%;
+    height: max-content;
+    background-color: white;
+    margin-top: 100px;border-radius: 50px;
+}
+h1{
+    padding-left: 50px;
+    padding-top:40px;
+}
+.contactus iframe{
+    padding-top: 30px;
+    padding-left: 30px;
+    border-radius: 40px;
+}
+.cont{
+    width: 90%;
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-bottom: 50px;
+    padding-left: 40px;
+}
+.tabform{
+    padding-top: 30px;
+    padding-right: 50px;
+
+}
+.tabform td{
+    padding: 10px;
+    padding-right: 0px;
+}
+input[type=text],input[type=email],input[type=phone]{
+    width: 360px;
+    height: 60px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+textarea{
+    width: 100%;
+    height: 200px;
+    padding-left: 15px;
+    border: 1px solid #a9a9a9;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+}
+input[type=submit]{
+    width: 70%;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+input[type=submit]:hover{
+    background-color: #232323;
+}
