@@ -1,0 +1,832 @@
+/* Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8fafc;
+}
+
+/* Layout */
+.dashboard {
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    width: 280px;
+    height: 100vh;
+    background: #050B20;
+    padding: 25px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 40px;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.sidebar-nav a.active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 20px;
+    width: calc(100% - 40px);
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 12px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Content */
+.main {
+    margin-left: 280px;
+    padding: 30px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #050B20;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Stats Cards */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stats-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+}
+
+/* Icons */
+.sidebar-nav svg,
+.sidebar-footer svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2px;
+}
+
+/* Stats Icons */
+.stats-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(5, 11, 32, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.stats-icon svg {
+    width: 20px;
+    height: 20px;
+    color: #050B20;
+}
+
+.stats-info h3 {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 5px;
+}
+
+.stats-info p {
+    font-size: 24px;
+    font-weight: 600;
+    color: #050B20;
+}
+
+/* Cars Table */
+.recent-cars h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #050B20;
+}
+
+.car-info-cell {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.car-info-cell img {
+    width: 70px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.car-info-cell div {
+    display: flex;
+    flex-direction: column;
+}
+
+.car-info-cell strong {
+    font-size: 14px;
+    color: #050B20;
+}
+
+.car-info-cell span {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.recent-cars th {
+    font-weight: 500;
+    color: #64748b;
+    font-size: 13px;
+    background: #f8fafc;
+}
+
+.recent-cars td {
+    vertical-align: middle;
+}
+
+/* Update action buttons */
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-edit, 
+.btn-delete {
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    min-width: 85px;
+}
+
+.btn-edit {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+.btn-delete {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.btn-edit:hover {
+    background: #cbd5e1;
+}
+
+.btn-delete:hover {
+    background: #fee2e2;
+}
+
+/* Remove any text-decoration from buttons */
+.actions form,
+.actions button {
+    margin: 0;
+    padding: 0;
+}
+
+.actions button,
+.actions input[type="submit"] {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Buttons */
+.btn-add {
+    background: #050B20;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-add:hover {
+    background: #0a1836;
+}
+
+.btn-add svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Menu toggle button - hidden by default */
+.menu-toggle {
+    display: none;
+}
+
+/* Overlay styles */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    /* Fix sidebar for mobile */
+    .sidebar {
+        transform: translateX(-100%); /* Hide sidebar off-screen */
+        width: 280px;
+        left: 0;
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* Show sidebar */
+    }
+
+    /* Main content - remove left margin */
+    .main {
+        margin-left: 0 !important; /* Override any other margins */
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Menu Toggle Button - non-sticky */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute; /* Changed from fixed to absolute */
+        top: 15px;
+        left: 15px;
+        width: 35px;
+        height: 35px;
+        padding: 8px;
+        background: #050B20;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        z-index: 1001;
+        gap: 4px;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background-color: white;
+        transition: transform 0.3s ease;
+    }
+
+    /* Menu Toggle Animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Show overlay when active */
+    .sidebar-overlay.active {
+        display: block;
+    }
+
+    /* Prevent body scroll when sidebar is open */
+    body.sidebar-active {
+        overflow: hidden;
+    }
+
+    /* Dashboard card styles */
+    .dashboard-card {
+        background: white;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+
+    /* Stats cards */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .stats-card {
+        padding: 15px;
+    }
+
+    /* Table styles */
+    .table-responsive {
+        margin: 0;
+        padding: 0;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .cars-list table tbody tr {
+        display: block;
+        background: white;
+        margin-bottom: 15px;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .cars-list table td {
+        display: block;
+        padding: 8px 0;
+        border: none;
+    }
+
+    /* Car info styling */
+    .car-info-cell {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .car-info-cell img {
+        width: 80px;
+        height: 60px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    /* Action buttons */
+    .actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #f1f5f9;
+    }
+
+    .btn-edit, 
+    .btn-delete {
+        flex: 1;
+        padding: 10px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* Main content adjustment - remove extra padding */
+    .main {
+        margin-left: 0 !important;
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Header adjustment to accommodate button */
+    .header {
+        position: relative; /* To contain the absolute positioned button */
+        padding-left: 60px; /* Make space for the menu button */
+    }
+}
+
+/* Smaller mobile devices */
+@media screen and (max-width: 480px) {
+    .menu-toggle {
+        width: 35px;  /* Even smaller for mobile */
+        height: 35px;
+        padding: 8px;
+    }
+
+    .dashboard-card {
+        padding: 12px;
+    }
+
+    .car-info-cell img {
+        width: 60px;
+        height: 45px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .btn-edit, 
+    .btn-delete {
+        width: 100%;
+        padding: 8px;
+    }
+}
+
+/* Dashboard Card Styles */
+.dashboard-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+}
+
+.dashboard-card h2 {
+    font-size: 20px;
+    color: #0f172a;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 10px;
+}
+
+th {
+    background: #f8fafc;
+    padding: 16px 24px;
+    text-align: left;
+    font-weight: 500;
+    color: #64748b;
+    font-size: 13px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+td {
+    padding: 20px 24px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 14px;
+}
+
+tr:hover {
+    background: #fafafa;
+}
+
+/* Car Info Cell */
+.car-info-cell {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.car-info-cell img {
+    width: 75px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.car-info-cell div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.car-info-cell strong {
+    font-size: 14px;
+    color: #0f172a;
+    font-weight: 500;
+}
+
+.car-info-cell span {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* Price Column */
+td:nth-child(2) {
+    font-weight: 500;
+    color: #0f172a;
+}
+
+/* Date Column */
+td:nth-child(3) {
+    color: #64748b;
+}
+
+/* Action Buttons */
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-edit, 
+.btn-delete {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    min-width: 90px;
+    transition: all 0.2s ease;
+}
+
+.btn-edit {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.btn-delete {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.btn-edit:hover {
+    background: #e2e8f0;
+}
+
+.btn-delete:hover {
+    background: #fee2e2;
+}
+
+/* First/Last Column Padding */
+th:first-child,
+td:first-child {
+    padding-left: 30px;
+}
+
+th:last-child,
+td:last-child {
+    padding-right: 30px;
+}
+
+/* Form Pages Styles */
+.car-form {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+}
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-section h3 {
+    font-size: 18px;
+    color: #0f172a;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #0f172a;
+    font-family: 'Poppins', sans-serif;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+/* Add specific styles for number inputs */
+.form-group input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+/* Remove spinner buttons for Chrome/Safari/Edge */
+.form-group input[type="number"]::-webkit-outer-spin-button,
+.form-group input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #050B20;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(5, 11, 32, 0.1);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Image Upload */
+.image-upload {
+    border: 2px dashed #e2e8f0;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.image-upload:hover {
+    border-color: #050B20;
+    background: #f8fafc;
+}
+
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.upload-label .icon {
+    font-size: 24px;
+}
+
+.image-upload input[type="file"] {
+    display: none;
+}
+
+.image-upload small {
+    display: block;
+    color: #64748b;
+    margin-top: 8px;
+}
+
+/* Image Preview */
+.image-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.preview-item {
+    position: relative;
+    aspect-ratio: 4/3;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btn-save {
+    padding: 10px 24px;
+    background: #050B20;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-save:hover {
+    background: #0a1836;
+}
+
+.btn-cancel {
+    padding: 10px 24px;
+    background: #f1f5f9;
+    color: #64748b;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-cancel:hover {
+    background: #e2e8f0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .car-form {
+        padding: 20px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn-save,
+    .btn-cancel {
+        width: 100%;
+    }
+}
+
+/* Add these responsive styles at the end of the file */
+
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        width: 240px;
+    }
+
+    .main {
+        margin-left: 240px;
+    }
+
+    .dashboard-grid {
+        gap: 15px;
+    }
+
+    .cars-list table {
+        font-size: 14px;
+    }
+}

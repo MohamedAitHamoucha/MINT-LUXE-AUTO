@@ -28,18 +28,32 @@ body{
     padding-top:0px;
 }
 .timg{
-    margin-top: 200px;
-    width: fit-content;
-    padding-left: 60px;
+    margin-top: 100px;
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
 }
-td[rowspan="2"] img{
-    width: auto;
-    height: 700px;
+.timg table {
+    width: 100%;
+    border-spacing: 10px;
 }
-.timg img{
-    width: 340px;
-    height: auto;
-    border-radius: 10px;
+.timg img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.timg img:hover {
+    transform: scale(1.02);
+}
+td[rowspan="2"] img {
+    height: 620px;
+}
+.carsell{
+    margin-top: 150px;
+    align-items: center;
 }
 .whyus{
     margin-top: 150px;
@@ -47,4 +61,327 @@ td[rowspan="2"] img{
 .brand{
     margin-top: 150px;
     padding-bottom: 150px;
+}
+
+/* Add responsive styles */
+@media screen and (max-width: 1200px) {
+    .tabout span {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    td[rowspan="2"] img {
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .tabout {
+        grid-template-columns: 1fr;
+        padding: 0 30px;
+    }
+
+    .timg {
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    td[rowspan="2"] img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .timg table {
+        width: 100%;
+    }
+
+    .timg td {
+        padding: 5px;
+    }
+
+    .timg img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .aboutus {
+        margin-top: 80px;
+        border-radius: 30px;
+        padding-bottom: 30px;
+    }
+
+    .aboutus h1 {
+        padding: 30px 20px;
+        font-size: 24px;
+    }
+
+    .tabout {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .tabout span {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .tabout h1 {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .timg {
+        margin-top: 40px;
+        padding: 0 15px;
+    }
+
+    .timg table {
+        border-spacing: 5px;
+    }
+
+    .timg img {
+        height: 150px;
+    }
+
+    td[rowspan="2"] img {
+        height: 310px;
+    }
+
+    /* Why us section mobile styles */
+    .whyus {
+        margin-top: 60px;
+        padding: 0 15px;
+    }
+
+    .why {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .why table {
+        width: 100%;
+    }
+
+    .why p {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .why span {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Brands section mobile styles */
+    .brand {
+        margin-top: 60px;
+        padding: 0 15px 60px;
+    }
+
+    .brands {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    /* Car sell section mobile */
+    .carsell {
+        flex-direction: column;
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    .carsellimg img {
+        width: 100%;
+        height: auto;
+    }
+
+    .carselltxt {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .carselltxt1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .carselltxt2 {
+        font-size: 14px;
+    }
+
+    /* Add navbar mobile styles */
+    .menu-btn {
+        display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .menu-btn {
+            display: block;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            z-index: 1000;
+            cursor: pointer;
+            background-image: url('../images/menu.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .home, .cars, .about, .contact {
+            display: none;
+        }
+
+        .navbar.active .home,
+        .navbar.active .cars,
+        .navbar.active .about,
+        .navbar.active .contact {
+            display: block;
+            text-align: center;
+            padding: 10px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .aboutus {
+        margin-top: 60px;
+        border-radius: 20px;
+    }
+
+    .aboutus h1 {
+        padding: 20px 15px;
+        font-size: 20px;
+    }
+
+    .tabout {
+        padding: 0 15px;
+    }
+
+    .timg img {
+        max-width: 100%;
+    }
+
+    .tabout h1 {
+        font-size: 18px;
+    }
+
+    .timg {
+        margin-top: 30px;
+        padding: 0 10px;
+    }
+
+    .timg table {
+        border-spacing: 3px;
+    }
+
+    .timg img {
+        height: 120px;
+    }
+
+    td[rowspan="2"] img {
+        height: 250px;
+    }
+
+    .why p {
+        font-size: 16px;
+    }
+
+    .why span {
+        font-size: 13px;
+    }
+
+    /* Adjust lightbox controls for mobile */
+    .lightbox-prev,
+    .lightbox-next {
+        padding: 15px;
+        font-size: 24px;
+    }
+
+    .lightbox-close {
+        font-size: 24px;
+        padding: 8px;
+    }
+
+    .lightbox img {
+        max-width: 95%;
+    }
+
+    .whyus, .brand {
+        margin-top: 60px;
+    }
+
+    .brand {
+        padding-bottom: 60px;
+    }
+}
+
+/* Add these lightbox styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 20px;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
 }

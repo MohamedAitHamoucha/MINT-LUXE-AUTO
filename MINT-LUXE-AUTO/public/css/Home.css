@@ -11,17 +11,25 @@ body {
 .main {
     color: white;
     text-align: center;
-    margin: auto;
+    margin: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("../images/background.png");
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    background-color: #050B20;
 }
 .navbar {
     display: grid;
     grid-template-columns: 60% auto auto auto auto;
     font-weight: 500;
     height: max-content;
+}
+.logo{
+    width: fit-content;
+    margin-left: 2%;
+    margin-top: 1%;
 }
 .logo img {
     margin-left: 2%;
@@ -38,17 +46,30 @@ body {
     color: white;
 }
 .main table{
+    width: 100%;
     text-align: center;
-    margin-left: 22%;
-    margin-top: 10%;
+    padding-top: 15%;
 }
 .main table label{
     font-size: 20px;
     font-weight: 300;
+    color: white;
+    margin-bottom: 10px;
+    display: block;
 }
 .main table span{
     font-size: 50px;
     font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+    display: block;
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 850px;
 }
 .searchtxt {
     border: none;
@@ -56,10 +77,9 @@ body {
     border-bottom-left-radius: 30px;
     width: 700px;
     height: 50px;
-    padding: 10px;
-    padding-left: 20px;
-    border-style: none;
-    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    outline: none;
 }
 .searchbtn {
     border: none;
@@ -67,19 +87,24 @@ body {
     border-bottom-right-radius: 30px;
     width: 150px;
     height: 50px;
-    padding: 10px;
-    padding-left: 20px;
-    border-style: none;
-    margin-top: 10px;
     background-color: gold;
     background-image: url("../images/search.png");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 20px;
+    cursor: pointer;
+    margin-left: -1px;
+}
+.browse-text {
+    color: white;
+    margin-top: 20px;
+    font-size: 16px;
 }
 .cartype{
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 30px;
 }
 .cartype a{
     color: white;
@@ -132,29 +157,41 @@ body {
 .lamborghini{
     background-image: url("../images/lamborghini.png");
 }
-.carsell{
+.carsell {
     display: grid;
-    grid-template-columns: auto auto;
-    margin-top: 8%;
-    margin-left: 3%;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 40px;
+    background: #f5f5f5;
 }
-.carselltxt{
-    width: 700px;
-    height: 82.5vh;
-    background-color: rgb(128, 128, 128,0.3);
-    margin-right: 86px;
+
+.carsellimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.carselltxt1{
-    font-size: 40px;
+
+.carsellimg img {
+    max-width: 100%;
+    height: auto;
+}
+
+.carselltxt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.carselltxt1 {
+    font-size: 35px;
     font-weight: bold;
-    width: 600px;
-    padding-top: 50px;
-    padding-left: 40px;
+    margin-bottom: 20px;
 }
-.carselltxt2{
-    font-size: 20px;
-    padding-top: 50px;
-    padding-left: 40px;
+
+.carselltxt2 {
+    font-size: 16px;
+    line-height: 1.6;
 }
 .whyus fieldset{
     margin-top: 40px;
@@ -233,29 +270,478 @@ body {
 .tabinfo2 td{
     padding-right: 20px;
 }
-.footer{
+.footer {
     display: grid;
     grid-template-columns: 35% auto 5%;
     width: 100%;
-    height: 100 vh;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     background-color: black;
     color: white;
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding: 20px 0;
     margin-top: 100px;
+    border-radius: 10px 10px 0 0;
+    align-items: center;
 }
-.footer img{
+
+.footer img {
     padding-left: 20px;
+    width: 120px;
+    height: 70px;
 }
-.footer p{
+
+.footer p {
     padding-top: 15px;
     padding-left: 30px;
 }
-.footer a{
+
+.footer a {
     padding-top: 25px;
+    text-align: center;
 }
-legend{
-    padding-left: 30px;
+
+.footer a img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Tablet */
+@media screen and (max-width: 992px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .footer img {
+        padding-left: 0;
+    }
+
+    .footer p {
+        padding: 0;
+        text-align: center;
+    }
+
+    .footer a {
+        padding-top: 0;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 15px;
+        margin-top: 50px;
+    }
+
+    .footer img {
+        width: 100px;
+        height: 60px;
+    }
+
+    .footer p {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .footer a img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Search section styles */
+.search-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.searchtxt {
+    width: 700px;
+    height: 50px;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    padding: 0 20px;
+    font-size: 16px;
+    outline: none;
+}
+
+.searchbtn {
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    background-color: #FFD700;
+    cursor: pointer;
+    background-image: url("../images/search.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    margin-left: -1px;
+}
+
+.browse-text {
+    color: white;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Update table styles */
+.main table {
+    width: 100%;
+    text-align: center;
+    padding-top: 15%;
+}
+
+.main table label {
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.main table span {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+    display: block;
+}
+
+/* Tablet styles */
+@media screen and (max-width: 992px) {
+    .navbar {
+        grid-template-columns: auto auto auto auto auto !important;
+        padding: 0 20px;
+    }
+
+    .main table {
+        padding-top: 20%;
+    }
+
+    .search-container {
+        width: 90%;
+        max-width: 650px;
+    }
+
+    .searchtxt {
+        width: calc(100% - 100px);
+    }
+
+    .cartype {
+        padding: 20px;
+        flex-wrap: wrap;
+    }
+
+    .brands {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 20px;
+    }
+
+    .brands a {
+        width: 100%;
+        height: 200px;
+    }
+
+    .carsell {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .carsellimg img {
+        max-width: 80%;
+    }
+
+    .carselltxt {
+        text-align: center;
+    }
+
+    .carselltxt1 {
+        font-size: 30px;
+    }
+
+    .why {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 20px;
+    }
+
+    .why div {
+        width: auto;
+    }
+
+    .loc {
+        grid-template-columns: 1fr;
+        margin: 20px;
+        gap: 20px;
+    }
+
+    .info {
+        width: auto;
+        margin: 0;
+    }
+
+    .info1 {
+        width: auto;
+    }
+
+    .loc iframe {
+        width: 100%;
+        height: 400px;
+    }
+
+    .footer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .footer > div:first-child {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    body {
+        
+        width: 100%;
+    }
+
+    .main {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        width: fit-content;
+        margin: 0;
+    }
+
+    .logo img {
+        width: 100px;
+        height: auto;
+        margin: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 20px;
+    }
+
+    .menu-btn {
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .menu-btn span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: white;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    .home, .cars, .about, .contact {
+        display: none;
+    }
+
+    .navbar.active {
+        flex-direction: column;
+    }
+
+    .navbar.active .home,
+    .navbar.active .cars,
+    .navbar.active .about,
+    .navbar.active .contact {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .navbar.active .menu-btn span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .navbar.active .menu-btn span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar.active .menu-btn span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .main table {
+        padding-top: 30%;
+    }
+
+    .main table span {
+        font-size: 32px;
+        padding: 0 20px;
+    }
+
+    .search-container {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .searchtxt {
+        width: calc(100% - 70px);
+    }
+
+    .searchbtn {
+        width: 70px;
+    }
+
+    .brands {
+        grid-template-columns: 1fr;
+    }
+
+    .brands a {
+        height: 180px;
+    }
+
+    .why {
+        grid-template-columns: 1fr;
+    }
+
+    .why div {
+        height: auto;
+        padding: 20px;
+    }
+
+    .carsell {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .carsellimg img {
+        max-width: 100%;
+    }
+
+    .carselltxt {
+        padding: 10px;
+    }
+
+    .carselltxt1 {
+        font-size: 14px;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+        margin: 50px 0 0 0;
+        padding: 20px 0;
+        gap: 20px;
+        text-align: center;
+        border-radius: 0;
+        box-sizing: border-box;
+        position: relative;
+        left: 0;
+        right: 0;
+    }
+
+    .footer img {
+        padding: 0;
+        width: 100px;
+        height: auto;
+    }
+
+    .footer p {
+        padding: 0 20px;
+        font-size: 14px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .footer a {
+        padding: 0;
+    }
+
+    .footer a img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        margin-top: 30px;
+    }
+
+    .footer img {
+        width: 80px;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+}
+
+/* Add this at the top of your file, before other styles */
+.menu-btn {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .menu-btn {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        z-index: 1000;
+        cursor: pointer;
+        background-image: url('../images/menu.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .home, .cars, .about, .contact {
+        display: none;
+    }
+
+    .navbar.active .home,
+    .navbar.active .cars,
+    .navbar.active .about,
+    .navbar.active .contact {
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+    }
 }

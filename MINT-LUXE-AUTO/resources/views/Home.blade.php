@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
@@ -14,73 +14,41 @@
     <div class="main">
         <div class="navbar">
             <div class="logo">
-                <a href="#"><img src="{{ asset('images/white-logo.png') }}" alt="logo" width="120"
-                        height="80" align="left"></a>
+                <a href="/"><img src="{{ asset('images/white-logo.png') }}" alt="logo" width="120" height="80"></a>
             </div>
+            <div class="menu-btn"></div>
             <div class="home">
-                <a href="/">Home</a>
+                <a href="/">Accueil</a>
             </div>
             <div class="cars">
-                <a href="#">Cars</a>
+                <a href="{{ route('cars.index') }}">Voitures</a>
             </div>
             <div class="about">
-                <a href="/about">About</a>
+                <a href="/about">À propos</a>
             </div>
             <div class="contact">
-                <a href="/contact">Contact us</a>
+                <a href="/contact">Contact</a>
             </div>
         </div>
         <table>
             <tr>
-                <td>
-                    <label>Trouver des voitures à vendre près de chez vous</label>
-                </td>
+                <td><label>Trouver des voitures à vendre près de chez vous</label></td>
+            </tr>
+            <tr>
+                <td><span>Trouvez la voiture parfaite</span></td>
             </tr>
             <tr>
                 <td>
-                    <span>Trouvez la voiture parfaite</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <form>
-                        <input class="searchtxt" type="search" placeholder="Rechercher..."><input class="searchbtn"
-                            type="submit" onclick="search()" value="">
+                    <form action="{{ route('cars.index') }}" method="GET" class="search-form">
+                        <div class="search-container">
+                            <input class="searchtxt" type="search" name="search" placeholder="Rechercher...">
+                            <button type="submit" class="searchbtn"></button>
+                        </div>
                     </form>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <p>Ou parcourir les modèles présentés</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cartype">
-                        <a class="suv" href="#">SUV</a>
-                        <a class="hatchback" href="#">Hatchback</a>
-                        <a class="sedan" href="#">Sedan</a>
-                        <a class="hybrid" href="#">Hybrid</a>
-                        <a class="sport" href="#">Sport</a>
-                    </div>
-                </td>
-            </tr>
         </table>
-    </div>
-    <div class="brand">
-        <fieldset>
-            <legend>Découvrez nos marques de prestige</legend>
-            <div class="brands">
-                <a class="mercedes" href="#">
-                </a>
-                <a class="audi" href="#">
-                </a>
-                <a class="porsche" href="#">
-                </a>
-                <a class="lamborghini" href="#">
-                </a>
-            </div>
-        </fieldset>
+        
     </div>
     <div class="carsell">
         <div class="carsellimg">
@@ -232,6 +200,11 @@
         <p>Copyright © 2024 Mint Luxe Auto. All Rights Reserved.</p>
         <a href="#"><img src="{{ asset('images/up-arrow.png') }}" alt="up"></a>
     </div>
+    <script>
+    document.querySelector('.menu-btn').addEventListener('click', function() {
+        document.querySelector('.navbar').classList.toggle('active');
+    });
+    </script>
 </body>
 
 </html>

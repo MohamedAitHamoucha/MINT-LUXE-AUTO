@@ -12,36 +12,34 @@ body{
 }
 .contactus{
     width: 100%;
-    height: max-content;
     background-color: white;
-    margin-top: 100px;border-radius: 50px;
+    margin-top: 100px;
+    border-radius: 50px;
 }
-h1{
-    padding-left: 50px;
-    padding-top:40px;
+.contactus h1{
+    text-align: center;
+    color: #050B20;
+    font-size: 32px;
+    padding-top: 40px;
 }
-.contactus iframe{
-    padding-top: 30px;
-    padding-left: 30px;
-    border-radius: 40px;
-}
-.cont{
+.cont {
     width: 90%;
     display: grid;
     grid-template-columns: auto auto;
     padding-bottom: 50px;
-    padding-left: 40px;
+    padding-left: 200px;
 }
-.tabform{
+.tabform {
     padding-top: 30px;
     padding-right: 50px;
-
 }
-.tabform td{
+.tabform td {
     padding: 10px;
     padding-right: 0px;
 }
-input[type=text],input[type=email],input[type=phone]{
+.tabform input[type=text],
+.tabform input[type=email],
+.tabform input[type=tel] {
     width: 360px;
     height: 60px;
     padding-left: 15px;
@@ -49,7 +47,7 @@ input[type=text],input[type=email],input[type=phone]{
     border-radius: 4px;
     box-sizing: border-box;
 }
-textarea{
+.tabform textarea {
     width: 100%;
     height: 200px;
     padding-left: 15px;
@@ -58,7 +56,7 @@ textarea{
     box-sizing: border-box;
     resize: none;
 }
-input[type=submit]{
+.tabform input[type=submit] {
     width: 70%;
     background-color: black;
     color: white;
@@ -69,6 +67,314 @@ input[type=submit]{
     border-radius: 10px;
     cursor: pointer;
 }
-input[type=submit]:hover{
+.tabform input[type=submit]:hover {
     background-color: #232323;
+}
+.info {
+    background-color: #f5f5f5;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+.info1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.tabinfo {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.tabinfo tr {
+    margin-bottom: 15px;
+    display: block;
+}
+.tabinfo td:first-child {
+    width: 24px;
+    vertical-align: top;
+    padding-right: 10px;
+}
+.tabinfo img {
+    width: 20px;
+}
+.tabinfo span {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+.tabinfo label {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+.info2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 25px 0 15px;
+}
+.tabinfo2 {
+    display: flex;
+    gap: 15px;
+}
+.tabinfo2 img {
+    width: 22px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+.tabinfo2 img:hover {
+    opacity: 1;
+}
+.map-container {
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+    .cont {
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .cont {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+
+    .tabform input[type=text],
+    .tabform input[type=email],
+    .tabform input[type=tel] {
+        width: 100%;
+    }
+
+    .info {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contactus {
+        margin-top: 80px;
+        border-radius: 30px;
+    }
+
+    .contactus h1 {
+        font-size: 24px;
+        padding-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .cont {
+        width: auto;
+        grid-template-columns: 1fr;
+        padding: 15px;
+        margin: 0;
+    }
+
+    .tabform {
+        padding-right: 0;
+    }
+
+    .tabform td {
+        display: block;
+        padding: 5px 0;
+    }
+
+    .tabform input[type=text],
+    .tabform input[type=email],
+    .tabform input[type=tel] {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tabform textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tabform input[type=submit] {
+        width: 100%;
+    }
+
+    .info {
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .info1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .map-container {
+        padding: 0 15px;
+        margin-bottom: 20px;
+    }
+
+    /* Mobile Menu */
+    .menu-btn {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        z-index: 1000;
+        cursor: pointer;
+        background-image: url('/images/menu.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .navbar .home,
+    .navbar .cars,
+    .navbar .about,
+    .navbar .contact {
+        display: none;
+    }
+
+    .navbar.active .home,
+    .navbar.active .cars,
+    .navbar.active .about,
+    .navbar.active .contact {
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .info1, .info2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .tabinfo tr {
+        margin-bottom: 15px;
+    }
+
+    .tabinfo td:first-child {
+        width: 30px;
+    }
+
+    .tabinfo img {
+        width: 20px;
+    }
+
+    .tabinfo span {
+        font-size: 15px;
+    }
+
+    .tabinfo label {
+        font-size: 14px;
+    }
+
+    .tabinfo2 img {
+        width: 25px;
+    }
+
+    input[type=tel] {
+        width: 100%;
+    }
+
+    .alert-success {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contactus {
+        margin-top: 60px;
+        border-radius: 20px;
+    }
+
+    .contactus h1 {
+        font-size: 24px;
+        padding-top: 25px;
+        margin-bottom: 15px;
+    }
+
+    .cont {
+        padding: 15px;
+    }
+
+    .info {
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .info1 {
+        font-size: 18px;
+    }
+
+    .tabinfo label {
+        font-size: 13px;
+    }
+
+    .info2 {
+        font-size: 16px;
+    }
+
+    .tabinfo2 {
+        gap: 15px;
+    }
+
+    .tabinfo2 img {
+        width: 20px;
+    }
+
+    .map-container {
+        padding: 15px;
+    }
+
+    .map-container iframe {
+        height: 250px;
+    }
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px 15px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.alert-error ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Adjust submit button container */
+.submit-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Make sure all image URLs are relative */
+.menu-btn {
+    background-image: url('/images/menu.png');
 }

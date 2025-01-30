@@ -18,17 +18,18 @@
                     height="80" align="left"></a>
         </div>
         <div class="home">
-            <a href="/">Home</a>
+            <a href="/">Accueil</a>
         </div>
         <div class="cars">
-            <a href="#">Cars</a>
+            <a href="/cars">Voitures</a>
         </div>
         <div class="about">
-            <a href="/about">About</a>
+            <a href="/about">À propos</a>
         </div>
         <div class="contact">
-            <a href="/contact">Contact us</a>
+            <a href="/contact">Contact</a>
         </div>
+        <div class="menu-btn"></div>
     </div>
     <div class="contactus">
         <h1>Contactez-nous</h1>
@@ -39,36 +40,58 @@
         </iframe>
         <h1>Envoyez-nous un message</h1>
         <div class="cont">   
-            <form>
+            <form action="{{ route('send.email') }}" method="POST">
+                @csrf
                 <table class="tabform">
                     <tr>
                         <td>
-                            <input type="text" placeholder="Nom...">
+                            <input type="text" name="nom" placeholder="Nom..." required>
                         </td>
                         <td>
-                            <input type="text" placeholder="Prenom...">
-                        </td>
-                    <tr>
-                        <td>
-                            <input type="email" placeholder="Email...">
-                        </td>
-                        <td>
-                            <input type="phone" placeholder="Telephone...">
+                            <input type="text" name="prenom" placeholder="Prenom..." required>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <input type="email" name="email" placeholder="Email..." required>
+                        </td>
+                        <td>
+                            <input type="tel" name="telephone" placeholder="Telephone..." required>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <textarea placeholder="Message..."></textarea>
+                            <textarea name="message" placeholder="Message..." required></textarea>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="submit" value="Envoyer">
+                            <div class="submit-container">
+                                <input type="submit" value="Envoyer">
+                                @if(session('success'))
+                                    <div class="alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+                            </div>
                         </td>
                     </tr>
                 </table>
             </form>
+            @if(session('error'))
+                <div class="alert-error">
+                    {{ session('error') }}
+                </div>
+            @endif
+            @if ($errors->any())
+                <div class="alert-error">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="info">
                 <p class="info1">Détails du contact</p>
                 <table class="tabinfo">
@@ -117,6 +140,11 @@
         <p>Copyright © 2024 Mint Luxe Auto. All Rights Reserved.</p>
         <a href="#"><img src="{{ asset('images/up-arrow.png') }}" alt="up"></a>
     </div>
+    <script>
+    document.querySelector('.menu-btn').addEventListener('click', function() {
+        document.querySelector('.navbar').classList.toggle('active');
+    });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,10 @@
+version: 2
+tunnels:
+  web:
+    addr: 8000
+    proto: http
+    schemes:
+      - https
+    inspect: false
+    host_header: "localhost:8000"
+    bind_tls: true 
