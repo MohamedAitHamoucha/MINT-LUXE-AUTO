@@ -39,11 +39,19 @@ body {
     width: 150px;
     height: 10px;
     margin-top: 35%;
+    position: relative;
 }
 .navbar a {
     text-decoration: none;
     height: 30px;
     color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 .main table{
     width: 100%;
@@ -163,6 +171,9 @@ body {
     gap: 30px;
     padding: 40px;
     background: #f5f5f5;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .carsellimg {
@@ -193,82 +204,135 @@ body {
     font-size: 16px;
     line-height: 1.6;
 }
+.whyus {
+    width: 100%;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
 .whyus fieldset{
-    margin-top: 40px;
-    padding-top: 40px;
+    margin: 0;
+    padding: 0 40px;
     border: none;
-    text-align: center;
 }
 .whyus legend{
     font-size: 30px;
     font-weight: bold;
-}
-.why{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    margin-left: 5%;
-}
-.why div{
-    width: 350px;
-    height: 200px;
     text-align: left;
+    padding-left: 40px;
+}
+.why {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+.why div {
+    flex: 1;
+    min-width: 0;
 }
 .why table{
-    padding-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+.why table td {
+    text-align: center;
 }
 .why p{
     font-size: 17px;
     font-weight: bold;
+    margin: 15px 0;
 }
 .why span{
     font-size: 15px;
+    display: block;
+    line-height: 1.5;
 }
-.loc{
+.loc {
     display: grid;
-    grid-template-columns: auto auto;
-    margin-left: 5%;
-    margin-top: 150px;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 150px auto 0;
+    padding: 0 40px;
+    box-sizing: border-box;
+    align-items: stretch;
 }
-.loc iframe{
-    width: 800px;
-    height: 500px;
-    text-align: left;
+.loc iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 550px;
+    border-radius: 8px;
+    display: block;
+    margin: 0;
+    border: none;
 }
-.info{
+.info {
     width: fit-content;
-    background-color: rgb(128, 128, 128,0.3);
-    margin-right: 143px;
+    min-width: 400px;
+    background-color: rgb(128, 128, 128, 0.3);
+    padding: 40px;
+    border-radius: 8px;
+    height: 550px;
+    margin: 0 40px;
 }
-.info1{
-    font-size: 40px;
+.info1 {
+    font-size: 32px;
     font-weight: bold;
-    width: 600px;
-    padding-left: 25px;
 }
-.info2{
-    font-size: 20px;
-    padding-top: 20px;
-    padding-left: 25px;
+.tabinfo tr {
+    height: 50px;
 }
-.tabinfo{
-    padding-left: 20px;
+.tabinfo td:first-child {
+    width: 40px;
+    vertical-align: top;
 }
-.tabinfo span{
-    font-size: 20px;
+.tabinfo span {
+    font-size: 18px;
     font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
 }
-.tabinfo label{
-    font-size: 15px;
+.tabinfo label {
+    font-size: 14px;
+    line-height: 1.5;
 }
-.tabinfo tr{
-    padding-top: 10px;
+.info2 {
+    font-size: 18px;
 }
-.tabinfo2{
-    padding-left: 20px;
-    margin-bottom: 20px;
+.tabinfo2 {
+    display: flex;
+    gap: 15px;
+    margin-left: 35px;
 }
-.tabinfo2 td{
-    padding-right: 20px;
+.tabinfo2 tr {
+    display: flex;
+    gap: 15px;
+}
+.tabinfo2 td {
+    padding: 0;
+}
+.tabinfo2 a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+.tabinfo2 a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+.social-icon {
+    width: 20px;
+    height: 20px;
+    stroke: #050B20;
+    stroke-width: 2;
 }
 .footer {
     display: grid;
@@ -324,6 +388,15 @@ body {
 
     .footer a {
         padding-top: 0;
+    }
+
+    .info {
+        margin: 0;
+        width: 100%;
+    }
+
+    .tabinfo2 {
+        margin-left: 0;
     }
 }
 
@@ -452,9 +525,10 @@ body {
         height: 200px;
     }
 
-    .carsell {
+    .carsell, .loc {
         grid-template-columns: 1fr;
         padding: 20px;
+        margin: 20px auto;
     }
 
     .carsellimg img {
@@ -470,32 +544,30 @@ body {
     }
 
     .why {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        margin: 20px;
+        flex-wrap: wrap;
     }
 
     .why div {
-        width: auto;
-    }
-
-    .loc {
-        grid-template-columns: 1fr;
-        margin: 20px;
-        gap: 20px;
+        flex: 0 0 calc(50% - 10px);
     }
 
     .info {
-        width: auto;
-        margin: 0;
+        width: 100%;
+        min-width: unset;
+        height: auto;
     }
 
     .info1 {
         width: auto;
+        font-size: 32px;
+    }
+
+    .loc {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .loc iframe {
-        width: 100%;
         height: 400px;
     }
 
@@ -624,12 +696,20 @@ body {
     }
 
     .why {
-        grid-template-columns: 1fr;
+        flex-wrap: wrap;
     }
 
     .why div {
-        height: auto;
-        padding: 20px;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .why p {
+        font-size: 16px;
+    }
+
+    .why span {
+        font-size: 14px;
     }
 
     .carsell {
@@ -688,6 +768,10 @@ body {
         width: 25px;
         height: 25px;
     }
+
+    .navbar a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -743,5 +827,431 @@ body {
         display: block;
         text-align: center;
         padding: 10px 0;
+    }
+}
+
+/* Update social icon styles */
+.social-icon {
+    width: 24px;
+    height: 24px;
+    stroke: #050B20;  /* Changed to black/dark color */
+    stroke-width: 2;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    stroke: #FFD700;  /* Keep the gold color on hover */
+}
+
+.tabinfo2 a:hover {
+    background-color: rgba(5, 11, 32, 0.1); /* Changed to match the dark theme */
+}
+
+/* Add at the top of your CSS file */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Update the container styles */
+.main, .carsell, .whyus, .loc {
+    width: 100%;
+    max-width: 100vw;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+/* Update grid containers */
+.why {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.why div {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Update location section */
+.loc {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 150px auto 0;
+    padding: 0 40px;
+    box-sizing: border-box;
+    align-items: stretch;
+}
+
+.loc iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 550px;
+    border-radius: 8px;
+    display: block;
+    margin: 0;
+    border: none;
+}
+
+.info {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+.tabinfo tr {
+    height: 50px;
+}
+
+.tabinfo td:first-child {
+    width: 40px;
+    vertical-align: top;
+}
+
+.tabinfo span {
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.tabinfo label {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.info2 {
+    font-size: 18px;
+}
+
+.tabinfo2 {
+    display: flex;
+    gap: 15px;
+}
+
+.tabinfo2 td {
+    padding: 0;
+}
+
+.tabinfo2 a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tabinfo2 a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    stroke: #050B20;
+    stroke-width: 2;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 35% auto 5%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    margin-top: 100px;
+    border-radius: 10px 10px 0 0;
+    align-items: center;
+}
+
+.footer img {
+    padding-left: 20px;
+    width: 120px;
+    height: 70px;
+}
+
+.footer p {
+    padding-top: 15px;
+    padding-left: 30px;
+}
+
+.footer a {
+    padding-top: 25px;
+    text-align: center;
+}
+
+.footer a img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Tablet Responsive */
+@media screen and (max-width: 992px) {
+    .loc {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 50px;
+        padding: 0 20px;
+    }
+
+    .loc iframe {
+        height: 400px;
+        width: 100%;
+    }
+
+    .info {
+        width: 90%;
+        min-width: unset;
+        height: auto;
+        padding: 30px;
+    }
+
+    .info1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .footer img {
+        padding-left: 0;
+        margin: 0 auto;
+    }
+
+    .footer p {
+        padding: 0;
+    }
+
+    .footer a {
+        padding-top: 10px;
+    }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .loc {
+        padding: 0 15px;
+    }
+
+    .loc iframe {
+        height: 300px;
+    }
+
+    .info {
+        padding: 20px;
+    }
+
+    .info1 {
+        font-size: 22px;
+    }
+
+    .tabinfo tr {
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .tabinfo td:first-child {
+        width: 30px;
+    }
+
+    .tabinfo span {
+        font-size: 16px;
+    }
+
+    .tabinfo label {
+        font-size: 13px;
+    }
+
+    .info2 {
+        font-size: 16px;
+        margin: 20px 0 15px;
+    }
+
+    .tabinfo2 a {
+        width: 35px;
+        height: 35px;
+    }
+
+    .footer {
+        margin-top: 50px;
+        padding: 15px;
+    }
+
+    .footer img {
+        width: 100px;
+        height: auto;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+
+    .footer a img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    .loc iframe {
+        height: 250px;
+    }
+
+    .info {
+        padding: 15px;
+    }
+
+    .info1 {
+        font-size: 20px;
+    }
+
+    .tabinfo2 {
+        gap: 10px;
+    }
+
+    .tabinfo2 a {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.social-media {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+/* Why us section styles */
+.whyus {
+    width: 100%;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+.whyus fieldset {
+    margin: 0;
+    padding: 0 40px;
+    border: none;
+}
+
+.whyus legend {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.why {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.why div {
+    flex: 1;
+    min-width: 0;
+}
+
+.why table {
+    width: 100%;
+    text-align: center;
+}
+
+.why p {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.why span {
+    font-size: 15px;
+    display: block;
+    line-height: 1.5;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 992px) {
+    .whyus {
+        padding: 20px 0;
+    }
+
+    .whyus fieldset {
+        padding: 0 20px;
+    }
+
+    .why {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .why div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .why p {
+        font-size: 16px;
+    }
+
+    .why span {
+        font-size: 14px;
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .whyus legend {
+        font-size: 24px;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .why {
+        padding: 0 15px;
+    }
+
+    .why div {
+        padding: 15px;
     }
 }

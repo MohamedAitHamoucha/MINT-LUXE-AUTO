@@ -8,10 +8,11 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <title>MINT LUXE AUTO</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="main">
+    <div class="main" data-aos="fade-down">
         <div class="navbar">
             <div class="logo">
                 <a href="/"><img src="{{ asset('images/white-logo.png') }}" alt="logo" width="120" height="80"></a>
@@ -50,7 +51,7 @@
         </table>
         
     </div>
-    <div class="carsell">
+    <div class="carsell" data-aos="fade-right" data-aos-delay="100">
         <div class="carsellimg">
             <img src="{{ asset('images/car.png') }}" alt="car" width="700px">
         </div>
@@ -60,11 +61,11 @@
                 compétitifs et une large gamme de produits.</p>
         </div>
     </div>
-    <div class="whyus">
+    <div class="whyus" data-aos="fade-up" data-aos-delay="200">
         <fieldset>
             <legend>Pourquoi nous choisir ?</legend>
             <div class="why">
-                <div class="offer">
+                <div class="offer" data-aos="zoom-in" data-aos-delay="300">
                     <table>
                         <tr>
                             <td>
@@ -84,7 +85,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="dealership">
+                <div class="dealership" data-aos="zoom-in" data-aos-delay="400">
                     <table>
                         <tr>
                             <td>
@@ -105,7 +106,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="pricing">
+                <div class="pricing" data-aos="zoom-in" data-aos-delay="500">
                     <table>
                         <tr>
                             <td>
@@ -125,7 +126,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="service">
+                <div class="service" data-aos="zoom-in" data-aos-delay="600">
                     <table>
                         <tr>
                             <td>
@@ -148,11 +149,14 @@
             </div>
         </fieldset>
     </div>
-    <div class="loc">
+    <div class="loc" data-aos="fade-left" data-aos-delay="200">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3395.6652050349244!2d-8.011288124825743!3d31.67037813971628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafef511efe1557%3A0x55e23cef028f5db0!2sMint%20Luxe%20Auto!5e0!3m2!1sen!2sma!4v1707501929416!5m2!1sen!2sma"
-            width="max-content" height="max-content" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
         <div class="info">
             <p class="info1">Détails du contact</p>
             <table class="tabinfo">
@@ -185,12 +189,21 @@
             <p class="info2">Suivez-nous</p>
             <table class="tabinfo2">
                 <tr>
-                    <td><a href="https://www.facebook.com/mint.luxe.auto.marrakech/" target="_blank"><img
-                                src="{{ asset('images/facebook.svg') }}" alt="facebook"></a></td>
-                    <td><a href="https://www.instagram.com/mint.luxe.auto/" target="_blank"><img
-                                src="{{ asset('images/instagram.svg') }}" alt="instagram"></a></td>
-                    <td><a href="https://www.threads.net/@mint.luxe.auto" target="_blank"><img
-                                src="{{ asset('images/threads.svg') }}" alt="threads"></a></td>
+                    <td>
+                        <a href="https://www.facebook.com/mint.luxe.auto.marrakech/" target="_blank">
+                            <x-lucide-facebook class="social-icon" />
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://www.instagram.com/mint.luxe.auto/" target="_blank">
+                            <x-lucide-instagram class="social-icon" />
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://www.threads.net/@mint.luxe.auto" target="_blank">
+                            <x-lucide-message-circle class="social-icon" />
+                        </a>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -204,6 +217,13 @@
     document.querySelector('.menu-btn').addEventListener('click', function() {
         document.querySelector('.navbar').classList.toggle('active');
     });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
     </script>
 </body>
 
