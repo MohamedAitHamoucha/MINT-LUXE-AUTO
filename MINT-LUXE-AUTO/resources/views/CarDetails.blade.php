@@ -154,5 +154,58 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') prevBtn.click();
     if (e.key === 'ArrowRight') nextBtn.click();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const mainImage = document.querySelector('.main-image img');
+    const thumbnails = document.querySelectorAll('.thumbnails img');
+    let currentIndex = 0;
+    const imagesList = Array.from(thumbnails).map(thumb => thumb.src);
+
+    // Previous and Next buttons for normal view
+    const prevButton = document.createElement('button');
+    prevButton.className = 'nav-btn prev-btn';
+    prevButton.innerHTML = '❮';
+    
+    const nextButton = document.createElement('button');
+    nextButton.className = 'nav-btn next-btn';
+    nextButton.innerHTML = '❯';
+
+    // Add buttons to the main image container
+    const mainImageContainer = document.querySelector('.main-image');
+    mainImageContainer.appendChild(prevButton);
+    mainImageContainer.appendChild(nextButton);
+
+    // Navigation functions
+    function showImage(index) {
+        if (index < 0) index = imagesList.length - 1;
+        if (index >= imagesList.length) index = 0;
+        currentIndex = index;
+        mainImage.src = imagesList[currentIndex];
+        
+        // Update thumbnail selection
+        thumbnails.forEach((thumb, i) => {
+            thumb.classList.toggle('selected', i === currentIndex);
+        });
+    }
+
+    // Event listeners for buttons
+    prevButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        showImage(currentIndex - 1);
+    });
+
+    nextButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        showImage(currentIndex + 1);
+    });
+
+    // Keyboard navigation (only when lightbox is not active)
+    document.addEventListener('keydown', (e) => {
+        if (!document.querySelector('.lightbox.active')) {
+            if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+            if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+        }
+    });
+});
 </script>
 @endsection 

@@ -15,7 +15,8 @@
     <div class="main" data-aos="fade-down">
         <div class="navbar">
             <div class="logo">
-                <a href="/"><img src="{{ asset('images/white-logo.png') }}" alt="logo" width="120" height="80"></a>
+                <a href="/"><img src="{{ asset('images/white-logo.png') }}" alt="logo" width="120"
+                        height="80"></a>
             </div>
             <div class="menu-btn"></div>
             <div class="home">
@@ -49,7 +50,7 @@
                 </td>
             </tr>
         </table>
-        
+
     </div>
     <div class="carsell" data-aos="fade-right" data-aos-delay="100">
         <div class="carsellimg">
@@ -163,10 +164,7 @@
     <div class="loc" data-aos="fade-left" data-aos-delay="200">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3395.6652050349244!2d-8.011288124825743!3d31.67037813971628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafef511efe1557%3A0x55e23cef028f5db0!2sMint%20Luxe%20Auto!5e0!3m2!1sen!2sma!4v1707501929416!5m2!1sen!2sma"
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
         <div class="info">
             <p class="info1">Détails du contact</p>
@@ -197,17 +195,19 @@
                     <td><label>0644449650</label></td>
                 </tr>
             </table>
-            <p class="info2">Suivez-nous</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/mint.luxe.auto.marrakech/" target="_blank">
-                    <x-lucide-facebook class="social-icon" />
-                </a>
-                <a href="https://www.instagram.com/mint.luxe.auto/" target="_blank">
-                    <x-lucide-instagram class="social-icon" />
-                </a>
-                <a href="https://www.threads.net/@mint.luxe.auto" target="_blank">
-                    <x-lucide-message-circle class="social-icon" />
-                </a>
+            <div class="infosoc">
+                <p class="info2">Suivez-nous</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/mint.luxe.auto.marrakech/" target="_blank">
+                        <x-lucide-facebook class="social-icon" />
+                    </a>
+                    <a href="https://www.instagram.com/mint.luxe.auto/" target="_blank">
+                        <x-lucide-instagram class="social-icon" />
+                    </a>
+                    <a href="https://www.threads.net/@mint.luxe.auto" target="_blank">
+                        <x-lucide-message-circle class="social-icon" />
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -217,9 +217,9 @@
         <a href="#"><img src="{{ asset('images/up-arrow.png') }}" alt="up"></a>
     </div>
     <script>
-    document.querySelector('.menu-btn').addEventListener('click', function() {
-        document.querySelector('.navbar').classList.toggle('active');
-    });
+        document.querySelector('.menu-btn').addEventListener('click', function() {
+            document.querySelector('.navbar').classList.toggle('active');
+        });
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

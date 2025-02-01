@@ -151,9 +151,11 @@
                 </select>
             </div>
 
+            <div class="filter-section">
             <!-- Add this button next to the apply filters button -->
             <div class="filter-buttons">
                 <button type="button" class="apply-filters">Appliquer les filtres</button>
+            </div>
             </div>
         </div>
 

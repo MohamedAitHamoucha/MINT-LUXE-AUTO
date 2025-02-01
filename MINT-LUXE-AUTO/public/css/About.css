@@ -105,6 +105,7 @@ td[rowspan="2"] img {
     font-weight: bold;
     text-align: left;
     padding-left: 40px;
+    padding-bottom: 30px;
 }
 .why {
     display: flex;
@@ -148,7 +149,8 @@ td[rowspan="2"] img {
 }
 .brand legend{
     font-size: 30px;
-    font-weight: bold;
+    font-weight: bold; 
+    padding-bottom: 30px;
 }
 .brands{
     margin-left: 7%;

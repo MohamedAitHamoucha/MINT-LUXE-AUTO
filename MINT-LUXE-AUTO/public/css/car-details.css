@@ -41,6 +41,7 @@ body {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    position: relative;
 }
 
 .main-image img {
@@ -69,12 +70,16 @@ body {
     object-fit: cover;
     border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .thumbnails img:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnails img.selected {
+    opacity: 0.6;
 }
 
 /* Right side - Info */
@@ -253,6 +258,51 @@ input[type=submit]:hover {
     transform: translateY(-50%);
 }
 
+/* Add these styles for the navigation buttons */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+    outline: none;
+}
+
+.nav-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Update thumbnail styles */
+.thumbnail {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail.selected {
+    opacity: 0.6;
+}
+
+/* Make sure main image container handles overflow properly */
+.main-image {
+    position: relative;
+    overflow: hidden;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
     .cont {
@@ -327,6 +377,11 @@ input[type=submit]:hover {
 
     .main-image {
         height: 300px;
+    }
+
+    .nav-btn {
+        padding: 10px 15px;
+        font-size: 16px;
     }
 }
 

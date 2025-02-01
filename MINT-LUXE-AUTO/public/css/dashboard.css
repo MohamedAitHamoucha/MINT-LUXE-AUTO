@@ -93,10 +93,12 @@ body {
 }
 
 .header h1 {
-    font-size: 24px;
-    color: #050B20;
-    margin: 0;
-    font-weight: 600;
+	font-size: 24px;
+	color: #050B20;
+	margin: 0;
+	font-weight: 600;
+	padding-left: 15px;
+	margin-top: -10px;
 }
 
 /* Stats Cards */
@@ -478,6 +480,9 @@ body {
         width: 36px;
         height: 36px;
         justify-content: center;
+        position: absolute;
+    right: 4%;
+    top: 17%;
     }
 
     .btn-add .btn-text {

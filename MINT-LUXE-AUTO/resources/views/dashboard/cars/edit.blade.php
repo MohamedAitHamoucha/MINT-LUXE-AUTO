@@ -130,19 +130,12 @@
 
                 <div class="form-group">
                     <label for="sector">Secteur</label>
-                    <select id="sector" name="sector" required>
-                        <option value="luxe" {{ old('sector', $car->sector) == 'luxe' ? 'selected' : '' }}>Luxe</option>
-                        <option value="sport" {{ old('sector', $car->sector) == 'sport' ? 'selected' : '' }}>Sport</option>
-                    </select>
+                    <input type="text" name="sector" id="sector" class="form-control" value="{{ $car->sector }}" required>
                 </div>
 
                 <div class="form-group">
                     <label for="origin">Origine</label>
-                    <select id="origin" name="origin" required>
-                        <option value="importee" {{ old('origin', $car->origin) == 'importee' ? 'selected' : '' }}>Importée</option>
-                        <option value="dedouanee" {{ old('origin', $car->origin) == 'dedouanee' ? 'selected' : '' }}>Dédouanée</option>
-                        <option value="ww" {{ old('origin', $car->origin) == 'ww' ? 'selected' : '' }}>WW</option>
-                    </select>
+                    <input type="text" name="origin" id="origin" class="form-control" value="{{ $car->origin }}" required>
                 </div>
 
                 <div class="form-group">

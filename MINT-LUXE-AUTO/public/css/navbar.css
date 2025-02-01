@@ -1,6 +1,9 @@
 *{
     font-family: 'Poppins';
 }
+body{
+    overflow-x: hidden;
+}
 .menu-btn {
     display: none;
 }
