@@ -4,11 +4,8 @@
 
 @section('actions')
 <a href="{{ route('dashboard.cars.create') }}" class="btn-add">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="12" y1="5" x2="12" y2="19"></line>
-        <line x1="5" y1="12" x2="19" y2="12"></line>
-    </svg>
-    Ajouter une voiture
+    <span class="btn-text">Ajouter une voiture</span>
+    <span class="btn-icon">+</span>
 </a>
 @endsection
 
@@ -71,12 +68,17 @@
                         <td data-label="Prix">{{ number_format($car->price, 0, ',', ' ') }} MAD</td>
                         <td data-label="Date">{{ $car->created_at->format('d/m/y') }}</td>
                         <td class="actions">
-                            <a href="{{ route('dashboard.cars.edit', $car) }}" class="btn-edit">Modifier</a>
+                            <a href="/cars/{{ str_replace(' ', '-', $car->brand) }}-{{ str_replace(' ', '-', $car->model) }}" class="btn-view" title="Voir" target="_blank">
+                                <i data-lucide="eye"></i>
+                            </a>
+                            <a href="{{ route('dashboard.cars.edit', $car) }}" class="btn-edit" title="Modifier">
+                                <i data-lucide="pencil"></i>
+                            </a>
                             <form action="{{ route('dashboard.cars.destroy', $car) }}" method="POST" class="delete-form">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn-delete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette voiture ?')">
-                                    Supprimer
+                                <button type="submit" class="btn-delete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette voiture ?')" title="Supprimer">
+                                    <i data-lucide="trash-2"></i>
                                 </button>
                             </form>
                         </td>

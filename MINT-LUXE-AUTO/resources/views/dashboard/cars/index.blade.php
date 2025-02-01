@@ -40,12 +40,17 @@
                     <td>{{ number_format($car->price, 0, ',', ' ') }} MAD</td>
                     <td>{{ number_format($car->mileage, 0, ',', ' ') }} km</td>
                     <td class="actions">
-                        <a href="{{ route('dashboard.cars.edit', $car) }}" class="btn-edit">Modifier</a>
+                        <a href="/cars/{{ str_replace(' ', '-', $car->brand) }}-{{ str_replace(' ', '-', $car->model) }}" class="btn-view" title="Voir" target="_blank">
+                            <i data-lucide="eye"></i>
+                        </a>
+                        <a href="{{ route('dashboard.cars.edit', $car) }}" class="btn-edit" title="Modifier">
+                            <i data-lucide="pencil"></i>
+                        </a>
                         <form action="{{ route('dashboard.cars.destroy', $car) }}" method="POST" class="delete-form">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn-delete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette voiture ?')">
-                                Supprimer
+                            <button type="submit" class="btn-delete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette voiture ?')" title="Supprimer">
+                                <i data-lucide="trash-2"></i>
                             </button>
                         </form>
                     </td>

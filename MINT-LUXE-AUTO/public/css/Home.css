@@ -103,39 +103,17 @@ body {
     cursor: pointer;
     margin-left: -1px;
 }
-.browse-text {
-    color: white;
-    margin-top: 20px;
-    font-size: 16px;
-}
-.cartype{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding-top: 30px;
-}
-.cartype a{
-    color: white;
-    text-decoration: none;
-    width: 100px;
-    height: 40px;
-    border-radius: 20px;
-    border: 1px solid white;
-    background-color: rgb(128, 128, 128, 0.2);
-    margin-top: 10px;
-    margin-left: 10px;
-    text-align: center;
-    padding-top: 10px;
-}
+
 .brands{
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
 .brand fieldset{
     margin-top: 40px;
-    padding-top: 40px;
     border: none;
     text-align: center;
+    padding-left: 70px;
+    margin-bottom: 40px;
 }
 .brand legend{
     font-size: 30px;
@@ -272,7 +250,8 @@ body {
 .info {
     width: fit-content;
     min-width: 400px;
-    background-color: rgb(128, 128, 128, 0.3);
+
+    background-color: rgba(97, 97, 97, 0.3);
     padding: 40px;
     border-radius: 8px;
     height: 550px;
@@ -288,6 +267,10 @@ body {
 .tabinfo td:first-child {
     width: 40px;
     vertical-align: top;
+    padding-top: 0;
+}
+.tabinfo td:last-child {
+    vertical-align: top;
 }
 .tabinfo span {
     font-size: 18px;
@@ -298,23 +281,20 @@ body {
 .tabinfo label {
     font-size: 14px;
     line-height: 1.5;
+    display: block;
+    margin-top: 5px;
 }
 .info2 {
     font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
-.tabinfo2 {
+.social-links {
     display: flex;
     gap: 15px;
-    margin-left: 35px;
+    padding-left: 0;
 }
-.tabinfo2 tr {
-    display: flex;
-    gap: 15px;
-}
-.tabinfo2 td {
-    padding: 0;
-}
-.tabinfo2 a {
+.social-links a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -324,7 +304,7 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
 }
-.tabinfo2 a:hover {
+.social-links a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
@@ -398,23 +378,80 @@ body {
     .tabinfo2 {
         margin-left: 0;
     }
+
+    .brands {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+
+    .brands a {
+        width: 100%;
+        height: 200px;
+    }
+
+    .brand fieldset {
+        padding-left: 20px;
+    }
+
+    .brand legend {
+        font-size: 24px;
+        text-align: left;
+    }
+
+    .whyus legend {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .why {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .why div {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .why table {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .why table td {
+        text-align: center;
+    }
+
+    .why p {
+        font-size: 16px;
+        margin: 15px 0;
+    }
+
+    .why span {
+        font-size: 14px;
+        max-width: 300px;
+        margin: 0 auto;
+    }
 }
 
 /* Mobile */
 @media screen and (max-width: 480px) {
     .footer {
-        padding: 15px;
-        margin-top: 50px;
+        margin-top: 30px;
     }
 
     .footer img {
-        width: 100px;
-        height: 60px;
+        width: 80px;
     }
 
     .footer p {
         font-size: 12px;
-        padding: 10px;
     }
 
     .footer a img {
@@ -689,44 +726,38 @@ body {
 
     .brands {
         grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 15px;
+        margin: 0;
     }
 
     .brands a {
         height: 180px;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .brand fieldset {
+        padding: 0 15px;
+    }
+
+    .brand legend {
+        font-size: 20px;
+        padding-left: 15px;
     }
 
     .why {
-        flex-wrap: wrap;
+        padding: 0 15px;
     }
 
     .why div {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-
-    .why p {
-        font-size: 16px;
-    }
-
-    .why span {
-        font-size: 14px;
-    }
-
-    .carsell {
         padding: 15px;
-        gap: 15px;
     }
 
-    .carsellimg img {
-        max-width: 100%;
-    }
-
-    .carselltxt {
-        padding: 10px;
-    }
-
-    .carselltxt1 {
-        font-size: 14px;
+    .why table td {
+        display: block;
+        text-align: center;
+        width: 100%;
     }
 
     .footer {
@@ -772,6 +803,20 @@ body {
     .navbar a:hover {
         background-color: rgba(255, 255, 255, 0.1);
     }
+
+    .whyus legend {
+        font-size: 24px;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .why {
+        padding: 0 15px;
+    }
+
+    .why div {
+        padding: 15px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -785,6 +830,15 @@ body {
 
     .footer p {
         font-size: 12px;
+    }
+
+    .brands a {
+        height: 150px;
+    }
+
+    .brand fieldset {
+        padding: 0 10px;
+        margin: 20px 0;
     }
 }
 
@@ -923,6 +977,10 @@ html, body {
 
 .tabinfo td:first-child {
     width: 40px;
+    vertical-align: top;
+}
+
+.tabinfo td:last-child {
     vertical-align: top;
 }
 
@@ -1219,6 +1277,11 @@ html, body {
         padding: 0 20px;
     }
 
+    .whyus legend {
+        text-align: center;
+        padding-left: 0;
+    }
+
     .why {
         flex-direction: column;
         padding: 0 20px;
@@ -1228,15 +1291,29 @@ html, body {
     .why div {
         width: 100%;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .why table {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .why table td {
+        text-align: center;
     }
 
     .why p {
         font-size: 16px;
+        margin: 15px 0;
     }
 
     .why span {
         font-size: 14px;
-        padding: 0 15px;
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
 
@@ -1254,4 +1331,11 @@ html, body {
     .why div {
         padding: 15px;
     }
+}
+
+
+
+/* Add page-specific prefix to styles that should only apply to home page */
+.home-page .some-element {
+    /* styles */
 }

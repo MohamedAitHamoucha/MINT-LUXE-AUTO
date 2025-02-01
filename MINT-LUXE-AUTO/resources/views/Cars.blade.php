@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('css/cars.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Voitures - MINT LUXE AUTO</title>
 </head>
@@ -46,70 +46,70 @@
                 <h3>Marque</h3>
                 <select name="brand" id="brand" class="brand-select">
                     <option value="">Toutes les marques</option>
-                    <option value="Abarth">Abarth</option>
-                    <option value="Acura">Acura</option>
-                    <option value="Alfa Romeo">Alfa Romeo</option>
-                    <option value="Alpine">Alpine</option>
-                    <option value="Aston Martin">Aston Martin</option>
-                    <option value="Audi">Audi</option>
-                    <option value="Bentley">Bentley</option>
-                    <option value="BMW">BMW</option>
-                    <option value="Bugatti">Bugatti</option>
-                    <option value="BYD">BYD</option>
-                    <option value="Cadillac">Cadillac</option>
-                    <option value="Chevrolet">Chevrolet</option>
-                    <option value="Chrysler">Chrysler</option>
-                    <option value="Citroën">Citroën</option>
-                    <option value="Cupra">Cupra</option>
-                    <option value="Dacia">Dacia</option>
-                    <option value="Daewoo">Daewoo</option>
-                    <option value="Daihatsu">Daihatsu</option>
-                    <option value="Dodge">Dodge</option>
-                    <option value="DS">DS</option>
-                    <option value="Ferrari">Ferrari</option>
-                    <option value="Fiat">Fiat</option>
-                    <option value="Ford">Ford</option>
-                    <option value="Genesis">Genesis</option>
-                    <option value="Honda">Honda</option>
-                    <option value="Hummer">Hummer</option>
-                    <option value="Hyundai">Hyundai</option>
-                    <option value="Infiniti">Infiniti</option>
-                    <option value="Isuzu">Isuzu</option>
-                    <option value="Jaguar">Jaguar</option>
-                    <option value="Jeep">Jeep</option>
-                    <option value="Kia">Kia</option>
-                    <option value="Koenigsegg">Koenigsegg</option>
-                    <option value="Lamborghini">Lamborghini</option>
-                    <option value="Lancia">Lancia</option>
-                    <option value="Land Rover">Land Rover</option>
-                    <option value="Lexus">Lexus</option>
-                    <option value="Lotus">Lotus</option>
-                    <option value="Maserati">Maserati</option>
-                    <option value="Maybach">Maybach</option>
-                    <option value="Mazda">Mazda</option>
-                    <option value="McLaren">McLaren</option>
-                    <option value="Mercedes-Benz">Mercedes-Benz</option>
-                    <option value="MG">MG</option>
-                    <option value="Mini">Mini</option>
-                    <option value="Mitsubishi">Mitsubishi</option>
-                    <option value="Nissan">Nissan</option>
-                    <option value="Opel">Opel</option>
-                    <option value="Pagani">Pagani</option>
-                    <option value="Peugeot">Peugeot</option>
-                    <option value="Polestar">Polestar</option>
-                    <option value="Porsche">Porsche</option>
-                    <option value="Renault">Renault</option>
-                    <option value="Rolls-Royce">Rolls-Royce</option>
-                    <option value="Saab">Saab</option>
-                    <option value="Seat">Seat</option>
-                    <option value="Škoda">Škoda</option>
-                    <option value="Smart">Smart</option>
-                    <option value="Subaru">Subaru</option>
-                    <option value="Suzuki">Suzuki</option>
-                    <option value="Tesla">Tesla</option>
-                    <option value="Toyota">Toyota</option>
-                    <option value="Volkswagen">Volkswagen</option>
-                    <option value="Volvo">Volvo</option>
+                    <option value="Abarth" {{ request('brand') == 'Abarth' ? 'selected' : '' }}>Abarth</option>
+                    <option value="Acura" {{ request('brand') == 'Acura' ? 'selected' : '' }}>Acura</option>
+                    <option value="Alfa Romeo" {{ request('brand') == 'Alfa Romeo' ? 'selected' : '' }}>Alfa Romeo</option>
+                    <option value="Alpine" {{ request('brand') == 'Alpine' ? 'selected' : '' }}>Alpine</option>
+                    <option value="Aston Martin" {{ request('brand') == 'Aston Martin' ? 'selected' : '' }}>Aston Martin</option>
+                    <option value="Audi" {{ request('brand') == 'Audi' ? 'selected' : '' }}>Audi</option>
+                    <option value="Bentley" {{ request('brand') == 'Bentley' ? 'selected' : '' }}>Bentley</option>
+                    <option value="BMW" {{ request('brand') == 'BMW' ? 'selected' : '' }}>BMW</option>
+                    <option value="Bugatti" {{ request('brand') == 'Bugatti' ? 'selected' : '' }}>Bugatti</option>
+                    <option value="BYD" {{ request('brand') == 'BYD' ? 'selected' : '' }}>BYD</option>
+                    <option value="Cadillac" {{ request('brand') == 'Cadillac' ? 'selected' : '' }}>Cadillac</option>
+                    <option value="Chevrolet" {{ request('brand') == 'Chevrolet' ? 'selected' : '' }}>Chevrolet</option>
+                    <option value="Chrysler" {{ request('brand') == 'Chrysler' ? 'selected' : '' }}>Chrysler</option>
+                    <option value="Citroën" {{ request('brand') == 'Citroën' ? 'selected' : '' }}>Citroën</option>
+                    <option value="Cupra" {{ request('brand') == 'Cupra' ? 'selected' : '' }}>Cupra</option>
+                    <option value="Dacia" {{ request('brand') == 'Dacia' ? 'selected' : '' }}>Dacia</option>
+                    <option value="Daewoo" {{ request('brand') == 'Daewoo' ? 'selected' : '' }}>Daewoo</option>
+                    <option value="Daihatsu" {{ request('brand') == 'Daihatsu' ? 'selected' : '' }}>Daihatsu</option>
+                    <option value="Dodge" {{ request('brand') == 'Dodge' ? 'selected' : '' }}>Dodge</option>
+                    <option value="DS" {{ request('brand') == 'DS' ? 'selected' : '' }}>DS</option>
+                    <option value="Ferrari" {{ request('brand') == 'Ferrari' ? 'selected' : '' }}>Ferrari</option>
+                    <option value="Fiat" {{ request('brand') == 'Fiat' ? 'selected' : '' }}>Fiat</option>
+                    <option value="Ford" {{ request('brand') == 'Ford' ? 'selected' : '' }}>Ford</option>
+                    <option value="Genesis" {{ request('brand') == 'Genesis' ? 'selected' : '' }}>Genesis</option>
+                    <option value="Honda" {{ request('brand') == 'Honda' ? 'selected' : '' }}>Honda</option>
+                    <option value="Hummer" {{ request('brand') == 'Hummer' ? 'selected' : '' }}>Hummer</option>
+                    <option value="Hyundai" {{ request('brand') == 'Hyundai' ? 'selected' : '' }}>Hyundai</option>
+                    <option value="Infiniti" {{ request('brand') == 'Infiniti' ? 'selected' : '' }}>Infiniti</option>
+                    <option value="Isuzu" {{ request('brand') == 'Isuzu' ? 'selected' : '' }}>Isuzu</option>
+                    <option value="Jaguar" {{ request('brand') == 'Jaguar' ? 'selected' : '' }}>Jaguar</option>
+                    <option value="Jeep" {{ request('brand') == 'Jeep' ? 'selected' : '' }}>Jeep</option>
+                    <option value="Kia" {{ request('brand') == 'Kia' ? 'selected' : '' }}>Kia</option>
+                    <option value="Koenigsegg" {{ request('brand') == 'Koenigsegg' ? 'selected' : '' }}>Koenigsegg</option>
+                    <option value="Lamborghini" {{ request('brand') == 'Lamborghini' ? 'selected' : '' }}>Lamborghini</option>
+                    <option value="Lancia" {{ request('brand') == 'Lancia' ? 'selected' : '' }}>Lancia</option>
+                    <option value="Land Rover" {{ request('brand') == 'Land Rover' ? 'selected' : '' }}>Land Rover</option>
+                    <option value="Lexus" {{ request('brand') == 'Lexus' ? 'selected' : '' }}>Lexus</option>
+                    <option value="Lotus" {{ request('brand') == 'Lotus' ? 'selected' : '' }}>Lotus</option>
+                    <option value="Maserati" {{ request('brand') == 'Maserati' ? 'selected' : '' }}>Maserati</option>
+                    <option value="Maybach" {{ request('brand') == 'Maybach' ? 'selected' : '' }}>Maybach</option>
+                    <option value="Mazda" {{ request('brand') == 'Mazda' ? 'selected' : '' }}>Mazda</option>
+                    <option value="McLaren" {{ request('brand') == 'McLaren' ? 'selected' : '' }}>McLaren</option>
+                    <option value="Mercedes-Benz" {{ request('brand') == 'Mercedes-Benz' ? 'selected' : '' }}>Mercedes-Benz</option>
+                    <option value="MG" {{ request('brand') == 'MG' ? 'selected' : '' }}>MG</option>
+                    <option value="Mini" {{ request('brand') == 'Mini' ? 'selected' : '' }}>Mini</option>
+                    <option value="Mitsubishi" {{ request('brand') == 'Mitsubishi' ? 'selected' : '' }}>Mitsubishi</option>
+                    <option value="Nissan" {{ request('brand') == 'Nissan' ? 'selected' : '' }}>Nissan</option>
+                    <option value="Opel" {{ request('brand') == 'Opel' ? 'selected' : '' }}>Opel</option>
+                    <option value="Pagani" {{ request('brand') == 'Pagani' ? 'selected' : '' }}>Pagani</option>
+                    <option value="Peugeot" {{ request('brand') == 'Peugeot' ? 'selected' : '' }}>Peugeot</option>
+                    <option value="Polestar" {{ request('brand') == 'Polestar' ? 'selected' : '' }}>Polestar</option>
+                    <option value="Porsche" {{ request('brand') == 'Porsche' ? 'selected' : '' }}>Porsche</option>
+                    <option value="Renault" {{ request('brand') == 'Renault' ? 'selected' : '' }}>Renault</option>
+                    <option value="Rolls-Royce" {{ request('brand') == 'Rolls-Royce' ? 'selected' : '' }}>Rolls-Royce</option>
+                    <option value="Saab" {{ request('brand') == 'Saab' ? 'selected' : '' }}>Saab</option>
+                    <option value="Seat" {{ request('brand') == 'Seat' ? 'selected' : '' }}>Seat</option>
+                    <option value="Škoda" {{ request('brand') == 'Škoda' ? 'selected' : '' }}>Škoda</option>
+                    <option value="Smart" {{ request('brand') == 'Smart' ? 'selected' : '' }}>Smart</option>
+                    <option value="Subaru" {{ request('brand') == 'Subaru' ? 'selected' : '' }}>Subaru</option>
+                    <option value="Suzuki" {{ request('brand') == 'Suzuki' ? 'selected' : '' }}>Suzuki</option>
+                    <option value="Tesla" {{ request('brand') == 'Tesla' ? 'selected' : '' }}>Tesla</option>
+                    <option value="Toyota" {{ request('brand') == 'Toyota' ? 'selected' : '' }}>Toyota</option>
+                    <option value="Volkswagen" {{ request('brand') == 'Volkswagen' ? 'selected' : '' }}>Volkswagen</option>
+                    <option value="Volvo" {{ request('brand') == 'Volvo' ? 'selected' : '' }}>Volvo</option>
                 </select>
             </div>
 
@@ -117,8 +117,8 @@
             <div class="filter-section">
                 <h3>Année</h3>
                 <div class="year-inputs">
-                    <input type="number" id="min_year" name="min_year" placeholder="Min">
-                    <input type="number" id="max_year" name="max_year" placeholder="Max">
+                    <input type="text" id="min_year" name="min_year" placeholder="Min">
+                    <input type="text" id="max_year" name="max_year" placeholder="Max">
                 </div>
             </div>
 
@@ -145,13 +145,16 @@
                 <h3>État</h3>
                 <select name="condition" id="condition" class="condition-select">
                     <option value="">Tous les états</option>
-                    <option value="neuf">Neuf</option>
-                    <option value="occasion">Occasion</option>
-                    <option value="importee">Importée neuve</option>
+                    <option value="Neuf">Neuf</option>
+                    <option value="Occasion">Occasion</option>
+                    <option value="Importée neuve">Importée neuve</option>
                 </select>
             </div>
 
-            <button type="button" class="apply-filters">Appliquer les filtres</button>
+            <!-- Add this button next to the apply filters button -->
+            <div class="filter-buttons">
+                <button type="button" class="apply-filters">Appliquer les filtres</button>
+            </div>
         </div>
 
         <div class="cars-grid">
@@ -226,8 +229,21 @@
             if (minPrice) params.append('min_price', minPrice);
             if (maxPrice) params.append('max_price', maxPrice);
 
-            // Redirect with filters
-            window.location.href = `${window.location.pathname}?${params.toString()}`;
+            // Store the URL
+            const filterUrl = `${window.location.pathname}?${params.toString()}`;
+
+            // Clear all inputs before redirecting
+            document.getElementById('brand').selectedIndex = 0;
+            document.getElementById('condition').selectedIndex = 0;
+            document.getElementById('min_year').value = '';
+            document.getElementById('max_year').value = '';
+            document.getElementById('min_mileage').value = '';
+            document.getElementById('max_mileage').value = '';
+            document.getElementById('min_price').value = '';
+            document.getElementById('max_price').value = '';
+
+            // Navigate to the filtered URL
+            window.location.href = filterUrl;
         });
     });
     </script>

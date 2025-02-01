@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-    @yield('styles')
+    <link rel="stylesheet" href="{{ asset('css/car-details.css') }}">
     <title>@yield('title') - MINT LUXE AUTO</title>
 </head>
 <body>

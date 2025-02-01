@@ -6,6 +6,7 @@
     <title>Dashboard - MINT LUXE AUTO</title>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <div class="dashboard">
@@ -120,6 +121,8 @@
                 }
             });
         });
+
+        lucide.createIcons();
     </script>
 </body>
 </html> 

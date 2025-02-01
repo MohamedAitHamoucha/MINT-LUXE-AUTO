@@ -11,7 +11,7 @@ body {
     padding: 30px;
     margin-top: 20px;
     background-color: white;
-    border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 50px 50px;
     min-height: 80vh;
     position: relative;
 }
@@ -65,6 +65,32 @@ body {
     font-size: 15px;
 }
 
+select, option {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+}
+
+.filter select {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+}
+
+.filter select:hover {
+    border-color: #999;
+}
+
+.filter select:focus {
+    border-color: #666;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
 /* Price Range Slider */
 .price-range {
     display: flex;
@@ -104,7 +130,7 @@ body {
 }
 
 .apply-filters {
-    width: 100%;
+    width: 80%;
     padding: 15px;
     background: #050B20;
     color: white;
@@ -426,7 +452,7 @@ body {
     }
 
     .filters {
-        width: 280px;
+        width: 80%;
     }
 
     .filters h2 {
@@ -563,7 +589,45 @@ body {
     gap: 15px;
 }
 
-.year-inputs input,
+.year-input-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.year-inputs input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    outline: none;
+    -moz-appearance: textfield; /* Remove spinner for Firefox */
+}
+
+/* Remove spinner for Chrome/Safari/Edge */
+.year-inputs input::-webkit-outer-spin-button,
+.year-inputs input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.year-inputs input:hover {
+    border-color: #999;
+}
+
+.year-inputs input:focus {
+    border-color: #050B20;
+    box-shadow: 0 0 3px rgba(5, 11, 32, 0.1);
+}
+
+/* Style the datalist dropdown */
+.year-inputs input::-webkit-calendar-picker-indicator {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
 .mileage-inputs input {
     width: 100%;
     padding: 12px;
@@ -572,7 +636,6 @@ body {
     font-size: 14px;
 }
 
-.year-inputs input:focus,
 .mileage-inputs input:focus {
     border-color: #050B20;
     outline: none;
@@ -602,11 +665,38 @@ body {
 .brand-select,
 .condition-select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 14px;
     background-color: white;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    appearance: none; /* Remove default arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23333' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 35px;
+}
+
+.brand-select option,
+.condition-select option {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    padding: 8px;
+}
+
+.brand-select:hover,
+.condition-select:hover {
+    border-color: #999;
+}
+
+.brand-select:focus,
+.condition-select:focus {
+    border-color: #050B20;
+    box-shadow: 0 0 3px rgba(5, 11, 32, 0.1);
 }
 
 /* Hide filter toggle on desktop */
@@ -697,4 +787,38 @@ body {
         height: 24px;
         stroke: #050B20;
     }
+}
+
+/* Year select styles */
+.year-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: white;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23333' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 35px;
+}
+
+.year-select:hover {
+    border-color: #999;
+}
+
+.year-select:focus {
+    border-color: #050B20;
+    box-shadow: 0 0 3px rgba(5, 11, 32, 0.1);
+}
+
+.year-select option {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    padding: 8px;
 }

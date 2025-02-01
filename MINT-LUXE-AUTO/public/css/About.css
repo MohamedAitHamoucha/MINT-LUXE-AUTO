@@ -51,16 +51,135 @@ body{
 td[rowspan="2"] img {
     height: 620px;
 }
-.carsell{
-    margin-top: 150px;
+.carsell {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 40px;
+    background: #f5f5f5;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.carsellimg {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
-.whyus{
-    margin-top: 150px;
+
+.carsellimg img {
+    max-width: 100%;
+    height: auto;
+}
+
+.carselltxt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.carselltxt1 {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.carselltxt2 {
+    font-size: 16px;
+    line-height: 1.6;
+}
+.whyus {
+    width: 100%;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+.whyus fieldset{
+    margin: 0;
+    padding: 0 40px;
+    border: none;
+}
+.whyus legend{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 40px;
+}
+.why {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+.why div {
+    flex: 1;
+    min-width: 0;
+}
+.why table{
+    width: 100%;
+    text-align: center;
+}
+.why table td {
+    text-align: center;
+}
+.why p{
+    font-size: 17px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+.why span{
+    font-size: 15px;
+    display: block;
+    line-height: 1.5;
+}
+.brands{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.brand fieldset{
+    margin-top: 40px;
+    padding-top: 40px;
+    border: none;
+    text-align: center;
+}
+.brand legend{
+    font-size: 30px;
+    font-weight: bold;
+}
+.brands{
+    margin-left: 7%;
+}
+.brands a{
+    width: 250px;
+    height: 250px;
+    border: 1px solid rgb(128, 128, 128,0.5);
+    border-radius: 7px;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.mercedes{
+    background-image: url("../images/mercedes.png");
+}
+.audi{
+    background-image: url("../images/audi.png");
+}
+.porsche{
+    background-image: url("../images/porsche.png");
+}
+.lamborghini{
+    background-image: url("../images/lamborghini.png");
 }
 .brand{
     margin-top: 150px;
     padding-bottom: 150px;
+}
+.brand fieldset{
+    padding-left: 70px;
 }
 
 /* Add responsive styles */
@@ -75,71 +194,94 @@ td[rowspan="2"] img {
     }
 }
 
+/* Tablet Responsive */
 @media screen and (max-width: 992px) {
-    .tabout {
-        grid-template-columns: 1fr;
-        padding: 0 30px;
-    }
-
-    .timg {
-        margin-top: 50px;
-        width: 100%;
-    }
-
-    td[rowspan="2"] img {
-        height: auto;
-        max-width: 100%;
-    }
-
-    .timg table {
-        width: 100%;
-    }
-
-    .timg td {
-        padding: 5px;
-    }
-
-    .timg img {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-@media screen and (max-width: 768px) {
     .aboutus {
         margin-top: 80px;
-        border-radius: 30px;
-        padding-bottom: 30px;
-    }
-
-    .aboutus h1 {
-        padding: 30px 20px;
-        font-size: 24px;
     }
 
     .tabout {
         grid-template-columns: 1fr;
-        padding: 0 20px;
-        gap: 20px;
+        padding: 20px;
     }
 
     .tabout span {
         width: 100%;
-        font-size: 15px;
+    }
+
+    .timg {
+        margin-top: 50px;
+        padding: 0 20px;
+    }
+
+    .why {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .brands {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+
+    .brands a {
+        width: 100%;
+        height: 200px;
+    }
+
+    .brand fieldset {
+        padding-left: 20px;
+    }
+
+    .brand legend {
+        font-size: 24px;
+        text-align: left;
+    }
+
+    .carsell {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .carselltxt {
+        text-align: center;
+    }
+
+    .carselltxt1 {
+        font-size: 28px;
+    }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .aboutus {
+        margin-top: 60px;
+        border-radius: 30px;
+    }
+
+    .aboutus h1 {
+        font-size: 24px;
+        padding: 20px;
+    }
+
+    .tabout {
+        padding: 15px;
     }
 
     .tabout h1 {
         font-size: 20px;
-        line-height: 1.4;
+    }
+
+    .tabout span {
+        font-size: 14px;
     }
 
     .timg {
-        margin-top: 40px;
+        margin-top: 30px;
         padding: 0 15px;
-    }
-
-    .timg table {
-        border-spacing: 5px;
     }
 
     .timg img {
@@ -150,67 +292,47 @@ td[rowspan="2"] img {
         height: 310px;
     }
 
-    /* Why us section mobile styles */
     .whyus {
-        margin-top: 60px;
-        padding: 0 15px;
-    }
-
-    .why {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .why table {
-        width: 100%;
-    }
-
-    .why p {
-        font-size: 18px;
-        margin: 10px 0;
-    }
-
-    .why span {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    /* Brands section mobile styles */
-    .brand {
-        margin-top: 60px;
-        padding: 0 15px 60px;
-    }
-
-    .brands {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-    }
-
-    /* Car sell section mobile */
-    .carsell {
-        flex-direction: column;
-        padding: 20px;
         margin-top: 40px;
     }
 
-    .carsellimg img {
-        width: 100%;
-        height: auto;
+    .whyus legend {
+        font-size: 24px;
+        padding-left: 15px;
     }
 
-    .carselltxt {
-        text-align: center;
-        padding: 20px 0;
+    .why {
+        padding: 0 15px;
     }
 
-    .carselltxt1 {
+    .brand {
+        margin-top: 40px;
+    }
+
+    .brand legend {
+        font-size: 24px;
+    }
+
+    .brands {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 15px;
+        margin: 0;
+    }
+
+    .brands a {
+        height: 180px;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .brand fieldset {
+        padding: 0 15px;
+    }
+
+    .brand legend {
         font-size: 20px;
-        margin-bottom: 15px;
-    }
-
-    .carselltxt2 {
-        font-size: 14px;
+        padding-left: 15px;
     }
 
     /* Add navbar mobile styles */
@@ -254,38 +376,40 @@ td[rowspan="2"] img {
             padding: 10px 0;
         }
     }
+
+    .carsell {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .carsellimg img {
+        max-width: 100%;
+    }
+
+    .carselltxt {
+        padding: 10px;
+    }
+
+    .carselltxt1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .carselltxt2 {
+        font-size: 14px;
+    }
 }
 
+/* Small Mobile */
 @media screen and (max-width: 480px) {
     .aboutus {
-        margin-top: 60px;
+        margin-top: 50px;
         border-radius: 20px;
     }
 
     .aboutus h1 {
-        padding: 20px 15px;
         font-size: 20px;
-    }
-
-    .tabout {
-        padding: 0 15px;
-    }
-
-    .timg img {
-        max-width: 100%;
-    }
-
-    .tabout h1 {
-        font-size: 18px;
-    }
-
-    .timg {
-        margin-top: 30px;
-        padding: 0 10px;
-    }
-
-    .timg table {
-        border-spacing: 3px;
+        padding: 15px;
     }
 
     .timg img {
@@ -294,6 +418,10 @@ td[rowspan="2"] img {
 
     td[rowspan="2"] img {
         height: 250px;
+    }
+
+    .brands a {
+        height: 150px;
     }
 
     .why p {
@@ -324,8 +452,26 @@ td[rowspan="2"] img {
         margin-top: 60px;
     }
 
-    .brand {
-        padding-bottom: 60px;
+    .whyus legend,
+    .brand legend {
+        font-size: 20px;
+    }
+
+    .brand fieldset {
+        padding: 0 10px;
+        margin: 20px 0;
+    }
+
+    .carsell {
+        padding: 10px;
+    }
+
+    .carselltxt1 {
+        font-size: 20px;
+    }
+
+    .carselltxt2 {
+        font-size: 13px;
     }
 }
 

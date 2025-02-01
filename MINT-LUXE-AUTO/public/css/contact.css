@@ -17,21 +17,32 @@ body{
     border-radius: 50px;
 }
 .contactus h1{
-    text-align: center;
+    padding-left: 50px;
     color: #050B20;
     font-size: 32px;
     padding-top: 40px;
 }
+.contactus iframe{
+    width: 80%;
+    height: 100%;
+    min-height: 550px;
+    border-radius: 8px;
+    display: block;
+    margin: 0;
+    border: none;
+    padding-left: 200px;
+}
 .cont {
     width: 90%;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 45% auto;
     padding-bottom: 50px;
     padding-left: 200px;
 }
 .tabform {
     padding-top: 30px;
     padding-right: 50px;
+    width: fit-content;
 }
 .tabform td {
     padding: 10px;
@@ -71,69 +82,83 @@ body{
     background-color: #232323;
 }
 .info {
-    background-color: #f5f5f5;
-    padding: 25px;
+    width: fit-content;
+    min-width: 400px;
+    background-color: rgba(97, 97, 97, 0.3);
+    padding: 40px;
     border-radius: 8px;
-    margin-top: 30px;
+    height: 550px;
+    margin: 0 40px;
 }
 .info1 {
-    font-size: 22px;
+    font-size: 32px;
     font-weight: bold;
-    margin-bottom: 25px;
 }
-.tabinfo {
-    width: 100%;
-    margin-bottom: 30px;
-}
+
 .tabinfo tr {
-    margin-bottom: 15px;
-    display: block;
+    height: 50px;
 }
+
 .tabinfo td:first-child {
-    width: 24px;
+    width: 40px;
     vertical-align: top;
-    padding-right: 10px;
+    padding-top: 0;
 }
-.tabinfo img {
-    width: 20px;
+
+.tabinfo td:last-child {
+    vertical-align: top;
 }
+
 .tabinfo span {
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
     display: block;
     margin-bottom: 5px;
-    font-size: 15px;
 }
+
 .tabinfo label {
-    color: #666;
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.5;
+    display: block;
+    margin-top: 5px;
 }
+
 .info2 {
     font-size: 18px;
-    font-weight: bold;
-    margin: 25px 0 15px;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
+
 .tabinfo2 {
     display: flex;
     gap: 15px;
 }
-.tabinfo2 img {
-    width: 22px;
-    opacity: 0.7;
-    transition: opacity 0.3s;
+
+.tabinfo2 td {
+    padding: 0;
 }
-.tabinfo2 img:hover {
-    opacity: 1;
+
+.tabinfo2 a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
-.map-container {
-    padding: 0 20px;
-    margin-bottom: 30px;
+
+.tabinfo2 a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
-.map-container iframe {
-    width: 100%;
-    height: 300px;
-    border: none;
-    border-radius: 8px;
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    stroke: #050B20;
+    stroke-width: 2;
 }
 
 /* Responsive Styles */
@@ -143,24 +168,40 @@ body{
     }
 }
 
+/* Tablet Responsive */
 @media screen and (max-width: 992px) {
     .cont {
         grid-template-columns: 1fr;
         padding: 30px;
     }
 
-    .tabform input[type=text],
-    .tabform input[type=email],
-    .tabform input[type=tel] {
-        width: 100%;
+    .info {
+        width: 90%;
+        min-width: unset;
+        height: auto;
+        padding: 30px;
+        margin: 0 auto;
     }
 
-    .info {
-        max-width: 600px;
+    .info1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .tabinfo tr {
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .contactus iframe {
+        width: 90%;
+        padding-left: 0;
         margin: 0 auto;
+        min-height: 450px;
     }
 }
 
+/* Mobile Responsive */
 @media screen and (max-width: 768px) {
     .contactus {
         margin-top: 80px;
@@ -168,9 +209,10 @@ body{
     }
 
     .contactus h1 {
-        font-size: 24px;
-        padding-top: 30px;
-        margin-bottom: 20px;
+        font-size: 20px;
+        padding-top: 25px;
+        padding-left: 20px;
+        margin-bottom: 15px;
     }
 
     .cont {
@@ -207,17 +249,39 @@ body{
 
     .info {
         padding: 20px;
-        margin-top: 20px;
+        width: 100%;
+        margin: 0;
     }
 
     .info1 {
-        font-size: 20px;
-        margin-bottom: 20px;
+        font-size: 22px;
     }
 
-    .map-container {
-        padding: 0 15px;
-        margin-bottom: 20px;
+    .tabinfo tr {
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .tabinfo td:first-child {
+        width: 30px;
+    }
+
+    .tabinfo span {
+        font-size: 16px;
+    }
+
+    .tabinfo label {
+        font-size: 13px;
+    }
+
+    .info2 {
+        font-size: 16px;
+        margin: 20px 0 15px;
+    }
+
+    .social-links a {
+        width: 35px;
+        height: 35px;
     }
 
     /* Mobile Menu */
@@ -252,31 +316,6 @@ body{
         padding: 10px 0;
     }
 
-    .info1, .info2 {
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-
-    .tabinfo tr {
-        margin-bottom: 15px;
-    }
-
-    .tabinfo td:first-child {
-        width: 30px;
-    }
-
-    .tabinfo img {
-        width: 20px;
-    }
-
-    .tabinfo span {
-        font-size: 15px;
-    }
-
-    .tabinfo label {
-        font-size: 14px;
-    }
-
     .tabinfo2 img {
         width: 25px;
     }
@@ -290,8 +329,45 @@ body{
         margin: 10px 0;
         text-align: center;
     }
+
+    .contactus iframe {
+        width: 100%;
+        padding: 0 15px;
+        min-height: 350px;
+        box-sizing: border-box;
+    }
+
+    .divform {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .tabform {
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .tabform td {
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    .submit-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .alert-success {
+        margin: 10px auto;
+        text-align: center;
+        display: block;
+    }
 }
 
+/* Small Mobile */
 @media screen and (max-width: 480px) {
     .contactus {
         margin-top: 60px;
@@ -299,9 +375,10 @@ body{
     }
 
     .contactus h1 {
-        font-size: 24px;
-        padding-top: 25px;
-        margin-bottom: 15px;
+        font-size: 18px;
+        padding-top: 20px;
+        padding-left: 15px;
+        margin-bottom: 10px;
     }
 
     .cont {
@@ -311,10 +388,20 @@ body{
     .info {
         padding: 15px;
         border-radius: 8px;
+        width: fit-content;
     }
 
     .info1 {
-        font-size: 18px;
+        font-size: 20px;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-links a {
+        width: 32px;
+        height: 32px;
     }
 
     .tabinfo label {
@@ -339,6 +426,16 @@ body{
 
     .map-container iframe {
         height: 250px;
+    }
+
+    .contactus iframe {
+        width: 100%;
+        padding: 0 10px;
+        min-height: 300px;
+    }
+
+    .divform {
+        padding: 0 10px;
     }
 }
 
@@ -377,4 +474,26 @@ body{
 /* Make sure all image URLs are relative */
 .menu-btn {
     background-image: url('/images/menu.png');
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    padding-left: 0;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }

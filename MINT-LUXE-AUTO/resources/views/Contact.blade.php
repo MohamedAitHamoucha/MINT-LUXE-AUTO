@@ -7,21 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
     <title>Contact Us</title>
 </head>
 
 <body>
     <div class="navbar">
         <div class="logo">
-            <a href="#"><img src="{{ asset('images/white-logo.png') }}" alt="logo" width="120"
-                    height="80" align="left"></a>
+            <a href="/"><img src="{{ asset('images/white-logo.png') }}" alt="logo" width="120" height="80"></a>
         </div>
+        <div class="menu-btn"></div>
         <div class="home">
             <a href="/">Accueil</a>
         </div>
         <div class="cars">
-            <a href="/cars">Voitures</a>
+            <a href="{{ route('cars.index') }}">Voitures</a>
         </div>
         <div class="about">
             <a href="/about">À propos</a>
@@ -29,7 +29,6 @@
         <div class="contact">
             <a href="/contact">Contact</a>
         </div>
-        <div class="menu-btn"></div>
     </div>
     <div class="contactus">
         <h1>Contactez-nous</h1>
@@ -40,58 +39,60 @@
         </iframe>
         <h1>Envoyez-nous un message</h1>
         <div class="cont">   
-            <form action="{{ route('send.email') }}" method="POST">
-                @csrf
-                <table class="tabform">
-                    <tr>
-                        <td>
-                            <input type="text" name="nom" placeholder="Nom..." required>
-                        </td>
-                        <td>
-                            <input type="text" name="prenom" placeholder="Prenom..." required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="email" name="email" placeholder="Email..." required>
-                        </td>
-                        <td>
-                            <input type="tel" name="telephone" placeholder="Telephone..." required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <textarea name="message" placeholder="Message..." required></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="submit-container">
-                                <input type="submit" value="Envoyer">
-                                @if(session('success'))
-                                    <div class="alert-success">
-                                        {{ session('success') }}
-                                    </div>
-                                @endif
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-            @if(session('error'))
-                <div class="alert-error">
-                    {{ session('error') }}
-                </div>
-            @endif
-            @if ($errors->any())
-                <div class="alert-error">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+            <div class="divform">
+                <form action="{{ route('send.email') }}" method="POST">
+                    @csrf
+                    <table class="tabform">
+                        <tr>
+                            <td>
+                                <input type="text" name="nom" placeholder="Nom..." required>
+                            </td>
+                            <td>
+                                <input type="text" name="prenom" placeholder="Prenom..." required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="email" name="email" placeholder="Email..." required>
+                            </td>
+                            <td>
+                                <input type="tel" name="telephone" placeholder="Telephone..." required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <textarea name="message" placeholder="Message..." required></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="submit-container">
+                                    <input type="submit" value="Envoyer">
+                                    @if(session('success'))
+                                        <div class="alert-success">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                @if(session('error'))
+                    <div class="alert-error">
+                        {{ session('error') }}
+                    </div>
+                @endif
+                @if ($errors->any())
+                    <div class="alert-error">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
             <div class="info">
                 <p class="info1">Détails du contact</p>
                 <table class="tabinfo">
@@ -122,16 +123,17 @@
                     </tr>
                 </table>
                 <p class="info2">Suivez-nous</p>
-                <table class="tabinfo2">
-                    <tr>
-                        <td><a href="https://www.facebook.com/mint.luxe.auto.marrakech/" target="_blank"><img
-                                    src="{{ asset('images/facebook.svg') }}" alt="facebook"></a></td>
-                        <td><a href="https://www.instagram.com/mint.luxe.auto/" target="_blank"><img
-                                    src="{{ asset('images/instagram.svg') }}" alt="instagram"></a></td>
-                        <td><a href="https://www.threads.net/@mint.luxe.auto" target="_blank"><img
-                                    src="{{ asset('images/threads.svg') }}" alt="threads"></a></td>
-                    </tr>
-                </table>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/mint.luxe.auto.marrakech/" target="_blank">
+                        <x-lucide-facebook class="social-icon" />
+                    </a>
+                    <a href="https://www.instagram.com/mint.luxe.auto/" target="_blank">
+                        <x-lucide-instagram class="social-icon" />
+                    </a>
+                    <a href="https://www.threads.net/@mint.luxe.auto" target="_blank">
+                        <x-lucide-message-circle class="social-icon" />
+                    </a>
+                </div>
             </div>
         </div>
     </div>

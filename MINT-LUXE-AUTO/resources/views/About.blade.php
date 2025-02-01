@@ -7,21 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('css/about.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
     <title>About Us</title>
 </head>
 
 <body>
     <div class="navbar">
         <div class="logo">
-            <a href="/"><img src="{{ asset('images/white-logo.png') }}" alt="logo" width="120"
-                    height="80" align="left"></a>
+            <a href="/"><img src="{{ asset('images/white-logo.png') }}" alt="logo" width="120" height="80"></a>
         </div>
+        <div class="menu-btn"></div>
         <div class="home">
             <a href="/">Accueil</a>
         </div>
         <div class="cars">
-            <a href="/cars">Voitures</a>
+            <a href="{{ route('cars.index') }}">Voitures</a>
         </div>
         <div class="about">
             <a href="/about">À propos</a>
@@ -29,7 +29,6 @@
         <div class="contact">
             <a href="/contact">Contact</a>
         </div>
-        <div class="menu-btn"></div>
     </div>
     <div class="aboutus">
         <h1>A propos de nous</h1>

@@ -203,26 +203,41 @@ body {
 /* Update action buttons */
 .actions {
     display: flex;
-    gap: 12px;
+    gap: 8px;
+    align-items: center;
+    height: 100%;
+    vertical-align: middle;
 }
 
+.btn-view, 
 .btn-edit, 
 .btn-delete {
-    padding: 6px 16px;
-    border-radius: 4px;
-    font-size: 13px;
+    padding: 6px;
+    border-radius: 6px;
     border: none;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    min-width: 85px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    transition: all 0.2s ease;
+}
+
+.btn-view {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.btn-view:hover {
+    background: #dcfce7;
 }
 
 .btn-edit {
-    background: #e2e8f0;
-    color: #1e293b;
+    background: #f1f5f9;
+    color: #0f172a;
 }
 
 .btn-delete {
@@ -231,11 +246,18 @@ body {
 }
 
 .btn-edit:hover {
-    background: #cbd5e1;
+    background: #e2e8f0;
 }
 
 .btn-delete:hover {
     background: #fee2e2;
+}
+
+.btn-edit i,
+.btn-delete i {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2.5px;
 }
 
 /* Remove any text-decoration from buttons */
@@ -264,13 +286,12 @@ body {
     transition: background-color 0.2s ease;
 }
 
-.btn-add:hover {
-    background: #0a1836;
+.btn-add .btn-icon {
+    display: none; /* Hide + symbol by default */
 }
 
-.btn-add svg {
-    width: 16px;
-    height: 16px;
+.btn-add:hover {
+    background: #0a1836;
 }
 
 /* Menu toggle button - hidden by default */
@@ -420,19 +441,23 @@ body {
 
     /* Action buttons */
     .actions {
-        display: flex;
-        gap: 10px;
-        margin-top: 15px;
-        padding-top: 15px;
-        border-top: 1px solid #f1f5f9;
+        gap: 8px;
+        justify-content: flex-start;
     }
 
+    .btn-view, 
     .btn-edit, 
     .btn-delete {
-        flex: 1;
-        padding: 10px;
-        font-size: 14px;
-        text-align: center;
+        min-width: 24px;
+        height: 24px;
+        padding: 4px;
+    }
+
+    .btn-view i,
+    .btn-edit i,
+    .btn-delete i {
+        width: 12px;
+        height: 12px;
     }
 
     /* Main content adjustment - remove extra padding */
@@ -446,6 +471,23 @@ body {
     .header {
         position: relative; /* To contain the absolute positioned button */
         padding-left: 60px; /* Make space for the menu button */
+    }
+
+    .btn-add {
+        padding: 8px;
+        width: 36px;
+        height: 36px;
+        justify-content: center;
+    }
+
+    .btn-add .btn-text {
+        display: none; /* Hide text on mobile */
+    }
+
+    .btn-add .btn-icon {
+        display: block; /* Show + symbol on mobile */
+        font-size: 24px;
+        line-height: 1;
     }
 }
 
@@ -467,13 +509,23 @@ body {
     }
 
     .actions {
-        flex-direction: column;
+        flex-direction: row; /* Keep buttons side by side */
+        gap: 6px;
     }
 
+    .btn-view, 
     .btn-edit, 
     .btn-delete {
-        width: 100%;
-        padding: 8px;
+        min-width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
+
+    .btn-view i,
+    .btn-edit i,
+    .btn-delete i {
+        width: 15px;
+        height: 15px;
     }
 }
 
@@ -564,46 +616,6 @@ td:nth-child(2) {
 /* Date Column */
 td:nth-child(3) {
     color: #64748b;
-}
-
-/* Action Buttons */
-.actions {
-    display: flex;
-    gap: 12px;
-}
-
-.btn-edit, 
-.btn-delete {
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    min-width: 90px;
-    transition: all 0.2s ease;
-}
-
-.btn-edit {
-    background: #f1f5f9;
-    color: #0f172a;
-}
-
-.btn-delete {
-    background: #fef2f2;
-    color: #dc2626;
-}
-
-.btn-edit:hover {
-    background: #e2e8f0;
-}
-
-.btn-delete:hover {
-    background: #fee2e2;
 }
 
 /* First/Last Column Padding */
@@ -829,4 +841,50 @@ td:last-child {
     .cars-list table {
         font-size: 14px;
     }
+
+    .actions {
+        gap: 10px;
+    }
+
+    .btn-view, 
+    .btn-edit, 
+    .btn-delete {
+        min-width: 26px;
+        height: 26px;
+    }
+
+    .btn-view i,
+    .btn-edit i,
+    .btn-delete i {
+        width: 13px;
+        height: 13px;
+    }
+}
+
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #0f172a;
+    font-family: 'Poppins', sans-serif;
+    background: white;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23333' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 35px;
+}
+
+.form-group select:hover {
+    border-color: #94a3b8;
+}
+
+.form-group select:focus {
+    border-color: #050B20;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(5, 11, 32, 0.1);
 }

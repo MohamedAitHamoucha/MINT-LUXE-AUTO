@@ -296,6 +296,29 @@ input[type=submit]:hover {
     .info-items {
         grid-template-columns: 1fr;
         gap: 15px;
+        padding: 15px;
+        background: #f8fafc;
+        border-radius: 15px;
+        margin: 0;
+    }
+
+    .info-item {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        padding-left: 5px;
+    }
+
+    .info-item span {
+        font-size: 14px;
+        margin-bottom: 2px;
+        color: #64748b;
+    }
+
+    .info-item p {
+        font-size: 16px;
+        color: #050B20;
+        margin: 0;
     }
 
     .specs-grid {

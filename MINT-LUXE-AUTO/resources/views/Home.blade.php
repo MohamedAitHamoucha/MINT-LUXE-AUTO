@@ -61,6 +61,17 @@
                 compétitifs et une large gamme de produits.</p>
         </div>
     </div>
+    <div class="brand" data-aos="fade-up" data-aos-delay="200">
+        <fieldset>
+            <legend>Découvrez nos marques de prestige</legend>
+            <div class="brands">
+                <a class="mercedes" href="/cars?brand=mercedes"></a>
+                <a class="audi" href="/cars?brand=audi"></a>
+                <a class="porsche" href="/cars?brand=porsche"></a>
+                <a class="lamborghini" href="/cars?brand=lamborghini"></a>
+            </div>
+        </fieldset>
+    </div>
     <div class="whyus" data-aos="fade-up" data-aos-delay="200">
         <fieldset>
             <legend>Pourquoi nous choisir ?</legend>
@@ -187,25 +198,17 @@
                 </tr>
             </table>
             <p class="info2">Suivez-nous</p>
-            <table class="tabinfo2">
-                <tr>
-                    <td>
-                        <a href="https://www.facebook.com/mint.luxe.auto.marrakech/" target="_blank">
-                            <x-lucide-facebook class="social-icon" />
-                        </a>
-                    </td>
-                    <td>
-                        <a href="https://www.instagram.com/mint.luxe.auto/" target="_blank">
-                            <x-lucide-instagram class="social-icon" />
-                        </a>
-                    </td>
-                    <td>
-                        <a href="https://www.threads.net/@mint.luxe.auto" target="_blank">
-                            <x-lucide-message-circle class="social-icon" />
-                        </a>
-                    </td>
-                </tr>
-            </table>
+            <div class="social-links">
+                <a href="https://www.facebook.com/mint.luxe.auto.marrakech/" target="_blank">
+                    <x-lucide-facebook class="social-icon" />
+                </a>
+                <a href="https://www.instagram.com/mint.luxe.auto/" target="_blank">
+                    <x-lucide-instagram class="social-icon" />
+                </a>
+                <a href="https://www.threads.net/@mint.luxe.auto" target="_blank">
+                    <x-lucide-message-circle class="social-icon" />
+                </a>
+            </div>
         </div>
     </div>
     <div class="footer">
