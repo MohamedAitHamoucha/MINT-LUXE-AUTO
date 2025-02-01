@@ -7,6 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('css/cars.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Voitures - MINT LUXE AUTO</title>
 </head>
 <body>
@@ -30,68 +31,127 @@
     </div>
 
     <div class="cars-container">
+        <!-- Filter toggle button -->
+        <button class="filter-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+        </button>
+
+        <div class="filter-overlay"></div>
+
         <div class="filters">
             <h2>Filtres</h2>
             
-            <!-- Search input -->
-            <div class="filter-section">
-                <h3>Rechercher</h3>
-                <div class="search-input">
-                    <input type="text" id="search" placeholder="Rechercher une voiture...">
-                </div>
-            </div>
-
-            <!-- Brand filter -->
+            <!-- Brand dropdown -->
             <div class="filter-section">
                 <h3>Marque</h3>
-                <div class="filter-options">
-                    <label><input type="checkbox" name="brand" value="mercedes"> Mercedes</label>
-                    <label><input type="checkbox" name="brand" value="audi"> Audi</label>
-                    <label><input type="checkbox" name="brand" value="porsche"> Porsche</label>
-                    <label><input type="checkbox" name="brand" value="lamborghini"> Lamborghini</label>
-                </div>
+                <select name="brand" id="brand" class="brand-select">
+                    <option value="">Toutes les marques</option>
+                    <option value="Abarth">Abarth</option>
+                    <option value="Acura">Acura</option>
+                    <option value="Alfa Romeo">Alfa Romeo</option>
+                    <option value="Alpine">Alpine</option>
+                    <option value="Aston Martin">Aston Martin</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Bentley">Bentley</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Bugatti">Bugatti</option>
+                    <option value="BYD">BYD</option>
+                    <option value="Cadillac">Cadillac</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Chrysler">Chrysler</option>
+                    <option value="Citroën">Citroën</option>
+                    <option value="Cupra">Cupra</option>
+                    <option value="Dacia">Dacia</option>
+                    <option value="Daewoo">Daewoo</option>
+                    <option value="Daihatsu">Daihatsu</option>
+                    <option value="Dodge">Dodge</option>
+                    <option value="DS">DS</option>
+                    <option value="Ferrari">Ferrari</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Genesis">Genesis</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Hummer">Hummer</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Infiniti">Infiniti</option>
+                    <option value="Isuzu">Isuzu</option>
+                    <option value="Jaguar">Jaguar</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Koenigsegg">Koenigsegg</option>
+                    <option value="Lamborghini">Lamborghini</option>
+                    <option value="Lancia">Lancia</option>
+                    <option value="Land Rover">Land Rover</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="Lotus">Lotus</option>
+                    <option value="Maserati">Maserati</option>
+                    <option value="Maybach">Maybach</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="McLaren">McLaren</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="MG">MG</option>
+                    <option value="Mini">Mini</option>
+                    <option value="Mitsubishi">Mitsubishi</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Opel">Opel</option>
+                    <option value="Pagani">Pagani</option>
+                    <option value="Peugeot">Peugeot</option>
+                    <option value="Polestar">Polestar</option>
+                    <option value="Porsche">Porsche</option>
+                    <option value="Renault">Renault</option>
+                    <option value="Rolls-Royce">Rolls-Royce</option>
+                    <option value="Saab">Saab</option>
+                    <option value="Seat">Seat</option>
+                    <option value="Škoda">Škoda</option>
+                    <option value="Smart">Smart</option>
+                    <option value="Subaru">Subaru</option>
+                    <option value="Suzuki">Suzuki</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Volvo">Volvo</option>
+                </select>
             </div>
 
-            <!-- Year Range filter -->
+            <!-- Year Range -->
             <div class="filter-section">
                 <h3>Année</h3>
                 <div class="year-inputs">
-                    <input type="number" min="1900" max="2024" class="min-year" placeholder="Min">
-                    <input type="number" min="1900" max="2024" class="max-year" placeholder="Max">
+                    <input type="number" id="min_year" name="min_year" placeholder="Min">
+                    <input type="number" id="max_year" name="max_year" placeholder="Max">
                 </div>
             </div>
 
-            <!-- Mileage Range filter -->
+            <!-- Mileage Range -->
             <div class="filter-section">
                 <h3>Kilométrage</h3>
                 <div class="mileage-inputs">
-                    <input type="number" min="0" class="min-mileage" placeholder="Min">
-                    <input type="number" min="0" class="max-mileage" placeholder="Max">
+                    <input type="number" id="min_mileage" name="min_mileage" placeholder="Min">
+                    <input type="number" id="max_mileage" name="max_mileage" placeholder="Max">
                 </div>
             </div>
 
-            <!-- Price Range filter -->
+            <!-- Price Range -->
             <div class="filter-section">
                 <h3>Prix</h3>
-                <div class="price-range">
-                    <div class="price-inputs">
-                        <input type="number" min="0" class="min-price" placeholder="Min">
-                        <input type="number" min="0" class="max-price" placeholder="Max">
-                    </div>
+                <div class="price-inputs">
+                    <input type="number" id="min_price" name="min_price" placeholder="Min">
+                    <input type="number" id="max_price" name="max_price" placeholder="Max">
                 </div>
             </div>
 
-            <!-- Condition filter -->
+            <!-- Condition -->
             <div class="filter-section">
                 <h3>État</h3>
-                <div class="filter-options">
-                    <label><input type="checkbox" name="condition" value="neuf"> Neuf</label>
-                    <label><input type="checkbox" name="condition" value="occasion"> Occasion</label>
-                    <label><input type="checkbox" name="condition" value="importee"> Importée neuve</label>
-                </div>
+                <select name="condition" id="condition" class="condition-select">
+                    <option value="">Tous les états</option>
+                    <option value="neuf">Neuf</option>
+                    <option value="occasion">Occasion</option>
+                    <option value="importee">Importée neuve</option>
+                </select>
             </div>
 
-            <button class="apply-filters">Appliquer les filtres</button>
+            <button type="button" class="apply-filters">Appliquer les filtres</button>
         </div>
 
         <div class="cars-grid">
@@ -126,91 +186,48 @@
         document.querySelector('.navbar').classList.toggle('active');
     });
 
-    // Filter functionality
     document.addEventListener('DOMContentLoaded', function() {
-        const searchInput = document.getElementById('search');
-        const brandInputs = document.querySelectorAll('input[name="brand"]');
-        const conditionInputs = document.querySelectorAll('input[name="condition"]');
-        const minYear = document.querySelector('.min-year');
-        const maxYear = document.querySelector('.max-year');
-        const minMileage = document.querySelector('.min-mileage');
-        const maxMileage = document.querySelector('.max-mileage');
-        const minPrice = document.querySelector('.min-price');
-        const maxPrice = document.querySelector('.max-price');
-        const applyButton = document.querySelector('.apply-filters');
-        const carCards = document.querySelectorAll('.car-card');
+        // Mobile filter toggle
+        const filterToggle = document.querySelector('.filter-toggle');
+        const filters = document.querySelector('.filters');
+        const overlay = document.querySelector('.filter-overlay');
 
-        // Input validation for numbers
-        function validateNumberInput(input) {
-            input.addEventListener('keypress', function(e) {
-                if (!/[0-9]/.test(e.key)) {
-                    e.preventDefault();
-                }
-            });
-
-            input.addEventListener('paste', function(e) {
-                e.preventDefault();
-                const text = (e.originalEvent || e).clipboardData.getData('text/plain');
-                if (/^\d+$/.test(text)) {
-                    input.value = text;
-                }
-            });
-        }
-
-        // Apply validation to all number inputs
-        [minYear, maxYear, minMileage, maxMileage, minPrice, maxPrice].forEach(input => {
-            validateNumberInput(input);
+        filterToggle.addEventListener('click', function() {
+            filters.classList.toggle('active');
+            overlay.classList.toggle('active');
         });
 
-        function filterCars() {
-            const searchTerm = searchInput.value.toLowerCase();
-            const selectedBrands = Array.from(brandInputs)
-                .filter(input => input.checked)
-                .map(input => input.value);
-            const selectedConditions = Array.from(conditionInputs)
-                .filter(input => input.checked)
-                .map(input => input.value);
-            
-            const minYearValue = Number(minYear.value) || 0;
-            const maxYearValue = Number(maxYear.value) || Infinity;
-            const minMileageValue = Number(minMileage.value) || 0;
-            const maxMileageValue = Number(maxMileage.value) || Infinity;
-            const minPriceValue = Number(minPrice.value) || 0;
-            const maxPriceValue = Number(maxPrice.value) || Infinity;
+        overlay.addEventListener('click', function() {
+            filters.classList.remove('active');
+            overlay.classList.remove('active');
+        });
 
-            carCards.forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const priceText = card.querySelector('.car-price').textContent;
-                const price = Number(priceText.replace(/[^0-9]/g, ''));
-                const yearText = card.querySelector('.car-details span:first-child').textContent;
-                const year = Number(yearText);
-                const mileageText = card.querySelector('.car-details span:last-child').textContent;
-                const mileage = Number(mileageText.replace(/[^0-9]/g, ''));
-                
-                const matchesSearch = searchTerm === '' || title.includes(searchTerm);
-                const matchesBrand = selectedBrands.length === 0 || 
-                    selectedBrands.some(brand => title.toLowerCase().includes(brand));
-                const matchesYear = (!minYearValue || year >= minYearValue) && 
-                    (!maxYearValue || year <= maxYearValue);
-                const matchesMileage = (!minMileageValue || mileage >= minMileageValue) && 
-                    (!maxMileageValue || mileage <= maxMileageValue);
-                const matchesPrice = (!minPriceValue || price >= minPriceValue) && 
-                    (!maxPriceValue || price <= maxPriceValue);
+        // Filter functionality
+        const applyButton = document.querySelector('.apply-filters');
+        
+        applyButton.addEventListener('click', function() {
+            const brand = document.getElementById('brand').value;
+            const condition = document.getElementById('condition').value;
+            const minYear = document.getElementById('min_year').value;
+            const maxYear = document.getElementById('max_year').value;
+            const minMileage = document.getElementById('min_mileage').value;
+            const maxMileage = document.getElementById('max_mileage').value;
+            const minPrice = document.getElementById('min_price').value;
+            const maxPrice = document.getElementById('max_price').value;
 
-                card.style.display = 
-                    matchesSearch && matchesBrand && matchesYear && 
-                    matchesMileage && matchesPrice ? 'block' : 'none';
-            });
-        }
+            // Build query string
+            const params = new URLSearchParams();
+            if (brand) params.append('brand', brand);
+            if (condition) params.append('condition', condition);
+            if (minYear) params.append('min_year', minYear);
+            if (maxYear) params.append('max_year', maxYear);
+            if (minMileage) params.append('min_mileage', minMileage);
+            if (maxMileage) params.append('max_mileage', maxMileage);
+            if (minPrice) params.append('min_price', minPrice);
+            if (maxPrice) params.append('max_price', maxPrice);
 
-        // Only filter when clicking the button
-        applyButton.addEventListener('click', filterCars);
-
-        // Prevent negative numbers
-        [minYear, maxYear, minMileage, maxMileage, minPrice, maxPrice].forEach(input => {
-            input.addEventListener('input', function() {
-                if (this.value < 0) this.value = 0;
-            });
+            // Redirect with filters
+            window.location.href = `${window.location.pathname}?${params.toString()}`;
         });
     });
     </script>
