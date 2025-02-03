@@ -66,8 +66,8 @@
         <fieldset>
             <legend>Découvrez nos marques de prestige</legend>
             <div class="brands">
-                <a class="mercedes" href="/cars?brand=mercedes"></a>
-                <a class="audi" href="/cars?brand=audi"></a>
+                <a class="mercedes" href="/cars?brand=mercedes-Benz"></a>
+                <a class="audi" href="/cars?brand=Audi"></a>
                 <a class="porsche" href="/cars?brand=porsche"></a>
                 <a class="lamborghini" href="/cars?brand=lamborghini"></a>
             </div>
